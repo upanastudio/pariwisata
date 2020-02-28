@@ -1,0 +1,96 @@
+
+.kt-aside-menu,
+#kt_aside_menu_wrapper {
+    background-color:  #0b1c2c;
+}
+
+#kt_subheader{
+	/*background-color: #fe9e02;*/
+}
+
+.kt-aside__brand{
+	background-color: white;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link, {
+    background-color: #fe9e02;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link {
+    background-color:#091621;
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link .kt-menu__link-icon {
+    filter:  invert(100%) sepia(0%) saturate(7468%) hue-rotate(11deg) brightness(109%) contrast(109%);
+}
+
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-icon {
+    filter: invert(68%) sepia(9%) saturate(453%) hue-rotate(199deg) brightness(89%) contrast(91%);
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link .kt-menu__link-icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(297deg) brightness(105%) contrast(105%);
+}
+
+.kt-aside-menu .kt-menu__nav > .kt-menu__item:not(.kt-menu__item--parent):not(.kt-menu__item--open):not(.kt-menu__item--here):not(.kt-menu__item--active):hover > .kt-menu__link {
+	background-color: #f10216;
+}
+
+
+.search-input{
+	border-radius: 0px 5px 5px 0px !important; 
+	background-color: rgba(11,28,44,.1);
+	border:none;
+}
+
+.info-aset{
+	padding: 60px 15px;
+	/*background-color:  #fda109;*/
+	color:   #0b1c2c;
+}
+.info-aset-2{
+	padding: 15px 15px;
+	/*background-color:  #fda109;*/
+	color:   #0b1c2c;
+}
+.info-aset-3{
+	padding: 15px 15px;
+	/*background-color:  #fda109;*/
+	color:   #212121;
+}
+.info-aset-icon{
+	font-size: 3rem;
+	/*color: white;*/
+	margin-bottom: 15px;
+}
+.info-aset-iconTanah{
+	font-size: 3rem;
+	margin-top: -10px;
+	margin-bottom: 6px;
+}
+.icon-yellow{
+	color: #9E9E9E;
+}
+
+.red-dark{
+	background-color: #f10216;
+	color: white;
+}
+
+.orange-dark{
+	background-color: #fda109;
+	color: white;
+}
+
+.custome-portlet{
+	padding: 0px;background-color: #fda109; color: white;
+}
+
+.custome-row{
+	background-color: #0b1c2c;margin-right: 0px;margin-left: 0px;padding: 10px 15px;border-radius: 4px 4px 0px 0px;
+}
+
+.custome-portlet-red{
+	background-color: #f21225;
+}

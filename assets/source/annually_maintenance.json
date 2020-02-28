@@ -1,0 +1,106 @@
+{
+     "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+            "no": 1,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 2,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 3,
+           "aset": "Mobil Tipe A",
+           "date": "2019-Nov-13"
+        },
+        {
+            "no": 4,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 5,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },{
+            "no": 6,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 7,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 8,
+           "aset": "Mobil Tipe A",
+           "date": "2019-Nov-13"
+        },
+        {
+            "no": 9,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 10,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 11,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 12,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 13,
+           "aset": "Mobil Tipe A",
+           "date": "2019-Nov-13"
+        },
+        {
+            "no": 14,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 15,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 16,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 17,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 18,
+           "aset": "Mobil Tipe A",
+           "date": "2019-Nov-13"
+        },
+        {
+            "no": 19,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        },
+        {
+            "no": 20,
+            "aset": "Mobil Tipe A",
+            "date": "2019-Nov-13"
+        }
+    ]
+}
