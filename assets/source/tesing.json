@@ -1,0 +1,79 @@
+{
+    "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+        "kode": "KD-123",
+        "namaBarang": "Tanah",
+        "jumlahKeadaan": "19",
+        "hargaKeadaan": "64.679.475.000.000",
+        "jumlahBerkurang": "0",
+        "hargaBerkurang": "0,00",
+        "jumlahBertambah": "0",
+        "hargaBertambah": "0,0",
+        "jumlahKeadanSetelah": "19",
+        "hargaKeadaanSetelah": "64.679.475.000.000",
+        "keterangan": "-"
+    },{
+        "kode": "KD-123",
+        "namaBarang": "Alat-Alat Besar",
+        "jumlahKeadaan": "19",
+        "hargaKeadaan": "64.679.475.000.000",
+        "jumlahBerkurang": "0",
+        "hargaBerkurang": "0,00",
+        "jumlahBertambah": "0",
+        "hargaBertambah": "0,0",
+        "jumlahKeadanSetelah": "19",
+        "hargaKeadaanSetelah": "64.679.475.000.000",
+        "keterangan": "-"
+    },{
+        "kode": "KD-123",
+        "namaBarang": "Alat-Alat Angkutan",
+        "jumlahKeadaan": "19",
+        "hargaKeadaan": "64.679.475.000.000",
+        "jumlahBerkurang": "0",
+        "hargaBerkurang": "0,00",
+        "jumlahBertambah": "0",
+        "hargaBertambah": "0,0",
+        "jumlahKeadanSetelah": "19",
+        "hargaKeadaanSetelah": "64.679.475.000.000",
+        "keterangan": "-"
+    },{
+        "kode": "KD-123",
+        "namaBarang": "Alat Bengkel dan Alat Ukur",
+        "jumlahKeadaan": "19",
+        "hargaKeadaan": "64.679.475.000.000",
+        "jumlahBerkurang": "0",
+        "hargaBerkurang": "0,00",
+        "jumlahBertambah": "0",
+        "hargaBertambah": "0,0",
+        "jumlahKeadanSetelah": "19",
+        "hargaKeadaanSetelah": "64.679.475.000.000",
+        "keterangan": "-"
+    },{
+        "kode": "KD-123",
+        "namaBarang": "Alat Kantor dan Rumah Tangga",
+        "jumlahKeadaan": "19",
+        "hargaKeadaan": "64.679.475.000.000",
+        "jumlahBerkurang": "0",
+        "hargaBerkurang": "0,00",
+        "jumlahBertambah": "0",
+        "hargaBertambah": "0,0",
+        "jumlahKeadanSetelah": "19",
+        "hargaKeadaanSetelah": "64.679.475.000.000",
+        "keterangan": "-"
+    },{
+        "kode": "KD-123",
+        "namaBarang": "Alat Laboratorium",
+        "jumlahKeadaan": "19",
+        "hargaKeadaan": "64.679.475.000.000",
+        "jumlahBerkurang": "0",
+        "hargaBerkurang": "0,00",
+        "jumlahBertambah": "0",
+        "hargaBertambah": "0,0",
+        "jumlahKeadanSetelah": "19",
+        "hargaKeadaanSetelah": "64.679.475.000.000",
+        "keterangan": "-"
+    }]
+}
