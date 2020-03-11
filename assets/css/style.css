@@ -95,3 +95,20 @@
 .custome-portlet-red{
 	background-color: #f21225;
 }
+
+#keteranganStatistik span{
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #212121; 
+}
+
+#keteranganStatistik p{
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #0B1C2C;
+	margin-top: 10px;
+}
+
+#trends i{
+	font-size: 1.5rem;
+}
