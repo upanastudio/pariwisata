@@ -132,7 +132,7 @@
 
 
 /*Responsive*/
-@media(max-width: 579px){
+@media(max-width: 760px){
 	.d-sm-none{
 		display: none;
 	}
