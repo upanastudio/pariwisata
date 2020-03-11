@@ -112,3 +112,59 @@
 #trends i{
 	font-size: 1.5rem;
 }
+.kt-header-mobile{
+	background-color:white;
+}
+.d-sm-none{
+	display: block;
+}
+
+
+/*Responsive*/
+@media(max-width: 579px){
+	.d-sm-none{
+		display: none;
+	}
+	.kt-aside{
+		background: #0B1C2C;
+	}
+	.kt-menu-link-icon{
+		margin-right: 10px
+	}
+	.kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-icon{
+		margin-right: 15px;
+	}
+	#kt_header_mobile_toggler,
+	#kt_header_mobile_topbar_toggler{
+		display: none;
+	}
+	.kt-header__topbar-user img{
+		margin-top: 13.5px;
+	}
+	.info-aset{
+		height: 18.25rem;
+	}
+	.info-aset-icon{
+		margin-bottom: 5px;
+		/*color: #22629b;*/
+		font-size: 2.5rem
+	}
+	.infoAset{
+		margin-top: 0px;
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: #0b1c2c;
+	}
+	#info-mobile h6,{
+		color: #0b1c2c;
+	}
+	#info-mobile .card{
+		margin-bottom: 5px;
+	}
+	.target-jatuh-tempo{
+		padding: 0px 20px;
+	}
+	tspan{
+		font-size: .85rem;
+	}
+}
