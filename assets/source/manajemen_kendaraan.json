@@ -1,0 +1,52 @@
+{
+     "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+            "no": 1,
+            "jenisKendaraan": "Motor",
+            "noPolisi": "DD 1232 YT",
+            "penanggungJawab": "Pak Roni",
+            "tglJatuhTempo": "12/11/2019",
+            "sisaHari": "-22 hari",
+            "status" : "tunggakan"
+        },
+        {
+            "no": 2,
+            "jenisKendaraan": "Mobil Sedan",
+            "noPolisi": "DD 1232 GG",
+            "penanggungJawab": "Pak Desta",
+            "tglJatuhTempo": "23/12/2019",
+            "sisaHari": "120 hari",
+            "status" : "belum bayar"
+        },
+        {
+            "no": 3,
+           "jenisKendaraan": "Mobil Sedan",
+            "noPolisi": "DD 1232 GG",
+            "penanggungJawab": "Pak Desta",
+            "tglJatuhTempo": "23/12/2019",
+            "sisaHari": "120 hari",
+            "status" : "tunggakan"
+        },
+        {
+            "no": 4,
+             "jenisKendaraan": "Mobil Sedan",
+            "noPolisi": "DD 1232 GG",
+            "penanggungJawab": "Pak Desta",
+            "tglJatuhTempo": "23/12/2019",
+            "sisaHari": "120 hari",
+            "status" : "belum bayar"
+        },
+        {
+            "no": 5,
+             "jenisKendaraan": "Mobil Sedan",
+            "noPolisi": "DD 1232 GG",
+            "penanggungJawab": "Pak Desta",
+            "tglJatuhTempo": "23/12/2019",
+            "sisaHari": "120 hari",
+            "status" : "selesai"
+        }
+    ]
+}

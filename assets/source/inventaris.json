@@ -5,6 +5,8 @@
     "sColumns": "",
     "aaData": [{
         "urut": "162",
+        "unit": 1,
+        "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
         "namaBarang": "Kursi Kerja",
@@ -21,6 +23,8 @@
         "keterangan": "Kursi Kerja"
     },{
         "urut": "162",
+        "unit": 1,
+        "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
         "namaBarang": "Kursi Kerja",
@@ -37,6 +41,8 @@
         "keterangan": "Kursi Kerja"
     },{
         "urut": "162",
+        "unit": 1,
+        "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
         "namaBarang": "Kursi Kerja",
@@ -53,6 +59,8 @@
         "keterangan": "Kursi Kerja"
     },{
         "urut": "162",
+        "unit": 1,
+        "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
         "namaBarang": "Kursi Kerja",
@@ -69,6 +77,8 @@
         "keterangan": "Kursi Kerja"
     },{
        "urut": "162",
+       "unit": 1,
+       "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
         "namaBarang": "Kursi Kerja",
@@ -85,6 +95,8 @@
         "keterangan": "Kursi Kerja"
     },{
         "urut": "162",
+        "unit": 1,
+        "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
         "namaBarang": "Kursi Kerja",

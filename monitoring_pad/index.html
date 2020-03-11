@@ -4,7 +4,7 @@
 <head>
 	<base href="../">
 	<meta charset="utf-8" />
-	<title>Pariwisata | Asset</title>
+	<title>Pariwisata | Monitoring PAD Dashboard</title>
 	<meta name="description" content="Latest updates and statistic charts">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!--begin::Fonts -->
@@ -22,21 +22,11 @@
 	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	<link rel="stylesheet" href="assets/css/style.css">
 	<style>
-		#presentasi {
+		#statistikPengunjung {
 			width: 100%;
-			height: 500px;
+			height:350px;
 		}
-		#statistikAset {
-			width: 100%;
-			height: 500px;
-		}
-		th{
-			text-align: center;
-		}
-		#tableRekapWrap th{
-			background-color: #f4f4f4;
-		}
-		
+
 	</style>
 </head>
 <!-- end::Head -->
@@ -75,13 +65,13 @@
 				<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
 					<div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1" data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
 						<ul class="kt-menu__nav ">
-							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
+							<li class="kt-menu__item  " aria-haspopup="true">
 								<a href="admin/index.html" class="kt-menu__link ">
 									<object type="image/svg+xml" data="assets/media/misc/asset.svg" class="kt-menu__link-icon icon icon-aset" width="50%"></object>
 									<span class="kt-menu__link-text text-center">Sistem Informasi Aset</span>
 								</a>
 							</li>
-							<li class="kt-menu__item  " aria-haspopup="true">
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true">
 								<a href="admin/monitoring_pad.html" class="kt-menu__link ">
 										<object type="image/svg+xml" data="assets/media/misc/speedometer_gray.svg" class="kt-menu__link-icon icon icon-speed" width="50%"></object><!-- 
 										<img class="kt-menu__link-icon mb-2" src="" width="50%"> -->
@@ -632,7 +622,7 @@
 								<div class="kt-subheader__main">
 									<h3 class="kt-subheader__title">Dashboard</h3>
 									<span class="kt-subheader__separator kt-subheader__separator--v"></span>
-									<h3 class="kt-subheader__title">Sistem Informasi Aset</h3>
+									<h3 class="kt-subheader__title">Monitoring PAD Dashboard</h3>
 								</div>
 								<div class="kt-subheader__toolbar">
 								</div>
@@ -644,248 +634,185 @@
 							<!--Begin::Dashboard 3-->
 							<!--Begin::Row-->
 							<div class="row">
-								<div class="col-8">
-									<div class="row">
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-building info-aset-icon icon-yellow"></i>
-												<h4>Gedung</h4>
-												<h2><span name="jumlahBangunan" class="counter" data-count="120">0</span></h2>
-												<h6>Bangunan</h6>
+								<div class="col-4">
+									<div class="kt-portlet kt-portlet--height-fluid info-aset-3 custome-portlet" style="">
+										<div class="row custome-row" style="">
+											<div class="col text-left">
+												<h5 style="color: white">Pendapatan Roterdam</h5>
 											</div>
 										</div>
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="flaticon2-layers info-aset-iconTanah icon-yellow"></i>
-												<h4>Tanah</h4>
-												<h2><span name="jumlahjalan" class="counter" data-count="4343">0</span></h2>
-												<h6>m<sup>2</sup></h6>
+										<div class="row mt-3 px-4 py-2">
+											<div class="col">
+												<h6>Hari Ini</h6>
+												<h5>Rp<span name="pendapatanHarian">578.000</span></h5>
 											</div>
-										</div>
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-tractor  info-aset-icon icon-yellow"></i>
-												<h4>Mesin</h4>
-												<h2><span name="jumlahMesin" class="counter" data-count="221">0</span></h2>
-												<h6>Item</h6>
-											</div>
-										</div>
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-tools info-aset-icon icon-yellow"></i>
-												<h4>Alat Alat Besar</h4>
-												<h2><span name="jumlahAlatBesar" class="counter" data-count="876">0</span></h2>
-												<h6>Alat</h6>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-code-branch info-aset-icon icon-yellow"></i>
-												<h4>Jalan dan Jembatan</h4>
-												<h2><span name="jumlahJalanJembatan" class="counter" data-count="2000">0</span></h2>
-												<h6>M2</h6>
-											</div>
-										</div>
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-city  info-aset-icon icon-yellow"></i>
-												<h4>Instalasi</h4>
-												<h2><span name="jumlahInstalasi" class="counter" data-count="10000">0</span></h2>
-												<h6>Unit<sup>2</sup></h6>
-											</div>
-										</div>
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-broadcast-tower  info-aset-icon icon-yellow"></i>
-												<h4>Jaringan</h4>
-												<h2><span name="jumlahJaringan" class="counter" data-count="302">0</span></h2>
-												<h6>Km</h6>
-											</div>
-										</div>
-										<div class="col text-center">
-											<div class="kt-portlet kt-portlet--height-fluid info-aset">
-												<i class="fa fa-brush info-aset-icon icon-yellow"></i>
-												<h4>Aset Renovasi</h4>
-												<h2><span name="jumlahAsetRenovasi" class="counter" data-count="8376">0</span></h2>
-												<h6>m<sup>3</sup></h6>
+											<div class="col">
+												<h6>Bulan Ini</h6>
+												<h5>Rp<span name="pendapatanBulanan">28.000.000</span></h5>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="col-4">
-									<div class="row">
-										<div class="kt-portlet kt-portlet--height-fluid info-aset-2 red-dark">
-											<div class="row">
-												<div class="col text-left">
-													<h5>Kendaraan Belum Bayar Pajak</h5>
-												</div>
-												<div class="col text-center">
-													<h1><span class="counter" data-count="5" name="blmBayarPajak">0</span></h1>
-												</div>
+									<div class="kt-portlet kt-portlet--height-fluid info-aset-3 custome-portlet" style="">
+										<div class="row custome-row" style="">
+											<div class="col text-left">
+												<h5 style="color: white">Pantai Losari</h5>
+											</div>
+										</div>
+										<div class="row mt-3 px-4 py-2">
+											<div class="col">
+												<h6>Hari Ini</h6>
+												<h5>Rp<span name="pendapatanHarian">578.000</span></h5>
+											</div>
+											<div class="col">
+												<h6>Bulan Ini</h6>
+												<h5>Rp<span name="pendapatanBulanan">28.000.000</span></h5>
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="kt-portlet kt-portlet--height-fluid info-aset-2 orange-dark">
-											<div class="row">
-												<div class="col text-left">
-													<h5>Kendaraan Sudah Bayar Pajak</h5>
-												</div>
-												<div class="col text-center">
-													<h1><span class="counter" data-count="20" name="sdhBayarPajak">0</span></h1>
-												</div>
+								</div>
+								<div class="col-4">
+									<div class="kt-portlet kt-portlet--height-fluid info-aset-3 custome-portlet" style="">
+										<div class="row custome-row" style="">
+											<div class="col text-left">
+												<h5 style="color: white">Pendapatan Rotterdam</h5>
+											</div>
+										</div>
+										<div class="row mt-3 px-4 py-2">
+											<div class="col">
+												<h6>Hari Ini</h6>
+												<h5>Rp<span name="pendapatanHarian">578.000</span></h5>
+											</div>
+											<div class="col">
+												<h6>Bulan Ini</h6>
+												<h5>Rp<span name="pendapatanBulanan">28.000.000</span></h5>
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="kt-portlet kt-portlet--height-fluid">
-											<div class="kt-portlet__head">
-												<div class="kt-portlet__head-label">
-													<h3 class="kt-portlet__head-title">
-														Target Jatuh Tempo
-													</h3>
-												</div>
+								</div>
+								<div class="col-4">
+									<div class="kt-portlet kt-portlet--height-fluid info-aset-3 custome-portlet" style="">
+										<div class="row custome-row" style="">
+											<div class="col text-left">
+												<h5 style="color: white">Pendapatan Roterdam</h5>
 											</div>
-											<div style="padding: 8px" class="kt-portlet__body">
-												<div class="kt-scroll" data-scroll="true" data-height="305" data-scrollbar-shown="true">
-													<table class="table table-bordered table-hover table-checkable" id="tblJatuhTempo">
-													</table>
-												</div>
-												
+										</div>
+										<div class="row mt-3 px-4 py-2">
+											<div class="col">
+												<h6>Hari Ini</h6>
+												<h5>Rp<span name="pendapatanHarian">578.000</span></h5>
+											</div>
+											<div class="col">
+												<h6>Bulan Ini</h6>
+												<h5>Rp<span name="pendapatanBulanan">28.000.000</span></h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="kt-portlet kt-portlet--height-fluid info-aset-3 custome-portlet" style="">
+										<div class="row custome-row" style="">
+											<div class="col text-left">
+												<h5 style="color: white">Pantai Losari</h5>
+											</div>
+										</div>
+										<div class="row mt-3 px-4 py-2">
+											<div class="col">
+												<h6>Hari Ini</h6>
+												<h5>Rp<span name="pendapatanHarian">578.000</span></h5>
+											</div>
+											<div class="col">
+												<h6>Bulan Ini</h6>
+												<h5>Rp<span name="pendapatanBulanan">28.000.000</span></h5>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="kt-portlet kt-portlet--height-fluid info-aset-3 custome-portlet" style="">
+										<div class="row custome-row" style="">
+											<div class="col text-left">
+												<h5 style="color: white">Pendapatan Rotterdam</h5>
+											</div>
+										</div>
+										<div class="row mt-3 px-4 py-2">
+											<div class="col">
+												<h6>Hari Ini</h6>
+												<h5>Rp<span name="pendapatanHarian">578.000</span></h5>
+											</div>
+											<div class="col">
+												<h6>Bulan Ini</h6>
+												<h5>Rp<span name="pendapatanBulanan">28.000.000</span></h5>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="row mt-5">
-								<div class="col">
-									<div class="kt-portlet kt-portlet--mobile">
+
+							<div class="row mt-3">
+								<div class="col-8">
+									<div class="kt-portlet kt-portlet--height-fluid">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
 												<h3 class="kt-portlet__head-title">
-													Presentasi
+													Statistik Pengunjung
 												</h3>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<div id="presentasi"></div>
+											<div id="statistikPengunjung"></div>
 										</div>
 									</div>
 								</div>
-								<div class="col">
-									<div class="kt-portlet kt-portlet--mobile">
+								<div class="col-4">
+									<div class="kt-portlet kt-portlet--height-fluid">
 										<div class="kt-portlet__head">
 											<div class="kt-portlet__head-label">
 												<h3 class="kt-portlet__head-title">
-													Nilai Aset
+													Rekapitulasi
 												</h3>
 											</div>
 										</div>
 										<div class="kt-portlet__body">
-											<div id="statistikAset"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row mt-5">
-								<div class="col">
-									<div class="kt-portlet kt-portlet--tab">
-										<div class="kt-portlet__head">
-											<div class="kt-portlet__head-label">
-												<span class="kt-portlet__head-icon kt-hidden">
-													<i class="la la-gear"></i>
-												</span>
-												<h3 class="kt-portlet__head-title">
-													Peta Aset
-												</h3>
+											<div class="row">
+												<div class="col">
+													<div class="kt-portlet info-aset-3 custome-portlet custome-portlet-red" style="">
+														<div class="row custome-row" style="">
+															<div class="col text-left">
+																<h5 style="color: white">Rekap Kunjungan</h5>
+															</div>
+														</div>
+														<div class="row mt-3 px-4 py-2">
+															<div class="col-12">
+																<h6>Kunjugan Mancanegara</h6>
+																<h5><span name="jumlahKunjungan">200.000</span> Orang</h5>
+															</div>
+															<div class="col-12 mt-4">
+																<h6>Dalam Negeri</h6>
+																<h5><span name="jumlahKunjungan">200.000</span> Orang</h5>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="kt-portlet__body" style="padding:5px" >
-											<div id="kt_gmap_1" style="height:450px;"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row mt-5">
-								<div class="col">
-									<div class="kt-portlet kt-portlet--mobile">
-										<div class="kt-portlet__head">
-											<div class="kt-portlet__head-label">
-												<h3 class="kt-portlet__head-title">
-													Rekapitulasi Mutasi Barang
-												</h3>
+											<div class="row">
+												<div class="col">
+													<div class="kt-portlet info-aset-3 custome-portlet custome-portlet-red" style="">
+														<div class="row custome-row" style="">
+															<div class="col text-left">
+																<h5 style="color: white">Bandara</h5>
+															</div>
+														</div>
+														<div class="row mt-3 px-4 py-2">
+															<div class="col-12">
+																<h6>Kunjugan Mancanegara</h6>
+																<h5><span name="jumlahKunjungan">200.000</span> Orang</h5>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="kt-portlet__body" id="tableRekapWrap">
-											<table class="table table-bordered" id="tbl_mutasi">
-												<thead class="">
-													<tr>
-														<th rowspan="3">Kode</th>
-														<th rowspan="3">Nama Barang</th>
-														<th colspan="2"> Keadan per 31 Desember</th>
-														<th colspan="4">Mutasi / Perubahan</th>
-														<th colspan="2">Keadaan per 31 Desember</th>
-														<th rowspan="3">Keterangan<br></th>
-													</tr>
-													<tr>
-														<th rowspan="2">Jumlah</th>
-														<th rowspan="2">Harga</th>
-														<th colspan="2">Berkurang</th>
-														<th colspan="2">Bertambah</th>
-														<th rowspan="2">Jumlah</th>
-														<th rowspan="2">Harga</th>
-													</tr>
-													<tr>
-														<th>Jumlah</th>
-														<th>Harga</th>
-														<th>Jumlah</th>
-														<th>Harga</th>
-													</tr>
-												</thead>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row mt-5">
-								<div class="col">
-									<div class="kt-portlet kt-portlet--mobile">
-										<div class="kt-portlet__head">
-											<div class="kt-portlet__head-label">
-												<h3 class="kt-portlet__head-title">
-													Buku Inventaris Gabungan
-												</h3>
-											</div>
-										</div>
-										<div class="kt-portlet__body" id="tableRekapWrap">
-											<table class="table table-bordered" id="tbl_inventaris">
-												<thead class="">
-													<tr>
-														<th colspan="3">Nomor</th>
-														<th colspan="3">Spesifikasi Barang</th>
-														<th rowspan="2">Bahan</th>
-														<th rowspan="2">Asal / Cara Peroleh Barang</th>
-														<th rowspan="2">Tahun Pembelian</th>
-														<th rowspan="2">Ukuran Barang / Konstruksi</th>
-														<th rowspan="2">Satuan</th>
-														<th rowspan="2">Keadaan Barang<br></th>
-														<th colspan="2">Jumlah</th>
-														<th rowspan="2">Keterangan</th>
-													</tr>
-													<tr>
-														<th>Urut</th>
-														<th>Kode Barang</th>
-														<th> Register</th>
-														<th>Nama / Jenis Barang</th>
-														<th>Merk / Type</th>
-														<th> No. Sertifikat</th>
-														<th>Barang</th>
-														<th>Harga</th>
-													</tr>
-												</thead>
-											</table>
 										</div>
 									</div>
 								</div>
@@ -911,7 +838,7 @@
 			</div>
 		</div>
 		<!-- end:: Page -->
-
+		
 		<!-- end::Quick Panel -->
 		<!-- begin::Global Config(global config for global JS sciprts) -->
 		<script>
@@ -1015,170 +942,9 @@
 						table.search(this.value).draw();
 					});
 				};
-
-				var tabel_mutasi = function() {
-					var table = $('#tbl_mutasi').DataTable({
-						responsive: false,
-						scrollX: true,
-						dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-						lengthMenu: [5, 10, 25, 50],
-						pageLength: 10,
-						language: {
-							'lengthMenu': 'Display _MENU_',
-						},
-						searchDelay: 500,
-						processing: true,
-						serverSide: false,
-						ajax: {
-							url: 'assets/source/tesing.json',
-							type: 'POST',
-						},
-						search: {
-							input: $('#generalSearch'),
-						},
-						columns: [
-						{
-							data: 'kode',
-							title: 'Kode',
-						},{
-							data: 'namaBarang',
-							title: 'Nama Barang',
-						},{
-							data: 'jumlahKeadaan',
-							title: 'Jumlah',
-						},{
-							data: 'hargaKeadaan',
-							title: 'Harga',
-						},{
-							data: 'jumlahBerkurang',
-							title: 'Jumlah',
-						},{
-							data: 'hargaBerkurang',
-							title: 'Harga',
-						},{
-							data: 'jumlahBertambah',
-							title: 'Jumlah',
-						},{
-							data: 'hargaBertambah',
-							title: 'Harga',
-						},{
-							data: 'jumlahKeadanSetelah',
-							title: 'Jumlah',
-						},{
-							data: 'hargaKeadaanSetelah',
-							title: 'Harga',
-						},{
-							data: 'keterangan',
-							title: 'Keterangan',
-						}],
-						columnDefs: [{
-							targets: [0,1,2,3,4,5,6,7,8,9,10],
-							className: 'text-center',
-						},
-						],
-
-					});
-					$('#kt_form_status').on('change', function() {
-						datatable.search($(this).val().toLowerCase(), 'kategori');
-					});
-
-					$('#kt_form_type').on('change', function() {
-						datatable.search($(this).val().toLowerCase(), 'status');
-					});
-
-					$('#kt_form_status,#kt_form_type').selectpicker();
-
-				};
-				var tabel_inventaris = function() {
-					var table = $('#tbl_inventaris').DataTable({
-						responsive: false,
-						scrollX: true,
-						dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-						lengthMenu: [5, 10, 25, 50],
-						pageLength: 10,
-						language: {
-							'lengthMenu': 'Display _MENU_',
-						},
-						searchDelay: 500,
-						processing: true,
-						serverSide: false,
-						ajax: {
-							url: 'assets/source/inventaris.json',
-							type: 'POST',
-						},
-						search: {
-							input: $('#generalSearch'),
-						},
-						columns: [
-						{
-							data: 'urut',
-							title: 'Urut',
-						},{
-							data: 'kodeBarang',
-							title: 'Kode Barang',
-						},{
-							data: 'register',
-							title: 'Register',
-						},{
-							data: 'namaBarang',
-							title: 'Nama / Jenis Barang',
-						},{
-							data: 'merk',
-							title: 'Merk / Type',
-						},{
-							data: 'noSertifikat',
-							title: 'No. Sertifikat',
-						},{
-							data: 'bahan',
-							title: 'Bahan',
-						},{
-							data: 'asal',
-							title: 'Asal / Cara Perolehan Barang',
-						},{
-							data: 'tahunPembelian',
-							title: 'Tahun Pembelian',
-						},{
-							data: 'ukuranBarang',
-							title: 'Ukuran Barang',
-						},{
-							data: 'satuanBarang',
-							title: 'Satuan Barang',
-						},{
-							data: 'keadaanBarang',
-							title: 'Keadaan Barang',
-						},{
-							data: 'jumlahBarang',
-							title: 'Jumlah',
-						},{
-							data: 'hargaBarang',
-							title: 'Harga',
-						},{
-							data: 'keterangan',
-							title: 'Keterangan',
-						}],
-						columnDefs: [{
-							targets: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-							className: 'text-center',
-						},
-						],
-
-					});
-					$('#kt_form_status').on('change', function() {
-						datatable.search($(this).val().toLowerCase(), 'kategori');
-					});
-
-					$('#kt_form_type').on('change', function() {
-						datatable.search($(this).val().toLowerCase(), 'status');
-					});
-
-					$('#kt_form_status,#kt_form_type').selectpicker();
-
-				};
 				return {
 					init: function() {
 						initTableActivities();
-						tabel_mutasi ();
-						tabel_inventaris ();
 					},
 				};
 			}();
@@ -1186,168 +952,110 @@
 				KTDatatablesSearchOptionsAdvancedSearch.init();
 			});
 		</script>
+
 		<script>
 			am4core.ready(function() {
-
 				function am4themes_myTheme(target) {
 					if (target instanceof am4core.ColorSet) {
 						target.list = [
-						am4core.color("#fda109"),
-						am4core.color("#f10216"),
 						am4core.color("#0b1c2c"),
 						];
 					}
 				}
 
 				am4core.useTheme(am4themes_myTheme);
+
 				am4core.useTheme(am4themes_animated);
 
-				var chart = am4core.create("presentasi", am4charts.PieChart);
 
-				var pieSeries = chart.series.push(new am4charts.PieSeries());
-				pieSeries.dataFields.value = "value";
-				pieSeries.dataFields.category = "keterangan";
+				var chart = am4core.create("statistikPengunjung", am4charts.XYChart);
 
-				chart.innerRadius = am4core.percent(20);
-
-				pieSeries.slices.template.stroke = am4core.color("#fff");
-				pieSeries.slices.template.strokeWidth = 2;
-				pieSeries.slices.template.strokeOpacity = 1;
-				pieSeries.slices.template
-				.cursorOverStyle = [
-				{
-					"property": "cursor",
-					"value": "pointer"
-				}
-				];
-
-				pieSeries.alignLabels = false;
-				pieSeries.labels.template.bent = true;
-				pieSeries.labels.template.radius = 3;
-				pieSeries.labels.template.padding(0,0,0,0);
-
-				pieSeries.ticks.template.disabled = false;
-
-				var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
-				shadow.opacity = 0;
-
-				var hoverState = pieSeries.slices.template.states.getKey("hover"); 
-
-				var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
-				hoverShadow.opacity = 0.7;
-				hoverShadow.blur = 5;
-
-				chart.legend = new am4charts.Legend();
+				var data = [];
 
 				chart.data = [{
-					"keterangan": "Kendaraan",
-					"value": 500
+					"bulan": "2014",
+					"pengunjung": 23.5,
+					"lineColor": chart.colors.next()
+				}, {
+					"bulan": "Jan",
+					"pengunjung": 26.2
+				}, {
+					"bulan": "Feb",
+					"pengunjung": 30.1
+				}, {
+					"bulan": "Mar",
+					"pengunjung": 20.5
+				}, {
+					"bulan": "Apr",
+					"pengunjung": 30.6
+				}, {
+					"bulan": "Mei",
+					"pengunjung": 34.1
+				}, {
+					"bulan": "Jun",
+					"pengunjung": 34.1
+				}, {
+					"bulan": "Jul",
+					"pengunjung": 34.1
+				}, {
+					"bulan": "Ags",
+					"pengunjung": 34.1
+				}, {
+					"bulan": "Sep",
+					"pengunjung": 34.1
+				}, {
+					"bulan": "Okt",
+					"pengunjung": 34.2
 				},{
-					"keterangan": "Bangunan",
-					"value": 920
-				}, {
-					"keterangan": "Tanah",
-					"value": 1500
-				}, ];
-
-			}); 
-		</script>
-		<script>
-			am4core.ready(function() {
-				function am4themes_myTheme2(target) {
-					if (target instanceof am4core.ColorSet) {
-						target.list = [
-						am4core.color("#0b1c2c"),
-						am4core.color("#fda109"),
-						am4core.color("#607D8B"),
-						am4core.color("#f10216"),
-						];
-					}
-				}
-
-				am4core.useTheme(am4themes_myTheme2);
-
-				am4core.useTheme(am4themes_animated);
-
-				var chart = am4core.create("statistikAset", am4charts.XYChart);
-				// chart.scrollbarX = new am4core.Scrollbar();
-
-				chart.data = [{
-					"ket": "Kendaraan",
-					"jumlah": 700
-				}, {
-					"ket": "Bangunan",
-					"jumlah": 920
-				}, {
-					"ket": "Tanah",
-					"jumlah": 1000
-				}, {
-					"ket": "canceled",
-					"jumlah": 500
+					"bulan": "Nov",
+					"pengunjung": 34.1
+				},{
+					"bulan": "Des",
+					"pengunjung": 34.1
 				}];
 
-
 				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-				categoryAxis.dataFields.category = "ket";
 				categoryAxis.renderer.grid.template.location = 0;
-				categoryAxis.renderer.minGridDistance = 30;
-				categoryAxis.renderer.labels.template.horizontalCenter ="middle";
-				categoryAxis.renderer.labels.template.verticalCenter = "middle";
-				categoryAxis.renderer.labels.template.rotation = 0;
-				categoryAxis.tooltip.disabled = true;
-				categoryAxis.renderer.minHeight = 110;
+				categoryAxis.renderer.ticks.template.disabled = true;
+				categoryAxis.renderer.line.opacity = 0;
+				categoryAxis.renderer.grid.template.disabled = true;
+				categoryAxis.renderer.minGridDistance = 40;
+				categoryAxis.dataFields.category = "bulan";
+				categoryAxis.startLocation = 0.4;
+				categoryAxis.endLocation = 0.6;
+
 
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-				valueAxis.renderer.minWidth = 50;
+				valueAxis.tooltip.disabled = true;
+				valueAxis.renderer.line.opacity = 0;
+				valueAxis.renderer.ticks.template.disabled = true;
+				valueAxis.min = 0;
 
-				var series = chart.series.push(new am4charts.ColumnSeries());
-				series.sequencedInterpolation = true;
-				series.dataFields.valueY = "jumlah";
-				series.dataFields.categoryX = "ket";
-				series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
-				series.columns.template.strokeWidth = 0;
+				var lineSeries = chart.series.push(new am4charts.LineSeries());
+				lineSeries.dataFields.categoryX = "bulan";
+				lineSeries.dataFields.valueY = "pengunjung";
+				lineSeries.tooltipText = "pengunjung: {valueY.value}";
+				lineSeries.fillOpacity = 0.5;
+				lineSeries.strokeWidth = 3;
+				lineSeries.propertyFields.stroke = "lineColor";
+				lineSeries.propertyFields.fill = "lineColor";
 
-				series.tooltip.pointerOrientation = "vertical";
-
-				series.columns.template.column.cornerRadiusTopLeft = 10;
-				series.columns.template.column.cornerRadiusTopRight = 10;
-				series.columns.template.column.fillOpacity = 0.8;
-
-				var hoverState = series.columns.template.column.states.create("hover");
-				hoverState.properties.cornerRadiusTopLeft = 0;
-				hoverState.properties.cornerRadiusTopRight = 0;
-				hoverState.properties.fillOpacity = 1;
-
-				series.columns.template.adapter.add("fill", function(fill, target) {
-					return chart.colors.getIndex(target.dataItem.index);
-				});
+				var bullet = lineSeries.bullets.push(new am4charts.CircleBullet());
+				bullet.circle.radius = 6;
+				bullet.circle.fill = am4core.color("#fff");
+				bullet.circle.strokeWidth = 3;
 
 				chart.cursor = new am4charts.XYCursor();
+				chart.cursor.behavior = "panX";
+				chart.cursor.lineX.opacity = 0;
+				chart.cursor.lineY.opacity = 0;
+
+				// chart.scrollbarX = new am4core.Scrollbar();
+				// chart.scrollbarX.parent = chart.bottomAxesContainer;
+
 			}); 
 		</script>
-		<script>
-			$('.counter').each(function() {
-				var $this = $(this),
-				countTo = $this.attr('data-count');
-
-				$({ countNum: $this.text()}).animate({
-					countNum: countTo
-				},
-
-				{
-
-					duration: 2500,
-					easing:'linear',
-					step: function() {
-						$this.text(Math.floor(this.countNum));
-					},
-					complete: function() {
-						$this.text(this.countNum);
-					}
-
-				});  
-			});
-		</script>
+		
 		<!--end::Page Scripts -->
 	</body>
 	<!-- end::Body -->
