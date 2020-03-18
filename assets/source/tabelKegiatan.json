@@ -1,0 +1,33 @@
+{
+     "iTotalRecords": 10,
+    "iTotalDisplayRecords": 10,
+    "sEcho": 0,
+    "sColumns": "",
+    "aaData": [{
+            "no": 1,
+            "namaProgram": "Nama Program",
+            "kegiatan_0": "Nama Kegiatan 0",
+            "kegiatan_1": "Nama Kegiatan 1",
+            "kegiatan_2": "Nama Kegiatan 2",
+            "kegiatan_3": "Nama Kegiatan 3",
+            "status_0": "6 Selesai",
+            "status_1": "8 On Progress",
+            "status_2": "10 Belum Dilaksanakan",
+            "totalDana": "Rp123.456.768,-",
+            "tingkatPenyerapan": "20%"
+        },
+        {
+            "no": 2,
+            "namaProgram": "Nama Program",
+            "kegiatan_0": "Nama Kegiatan 0",
+            "kegiatan_1": "Nama Kegiatan 1",
+            "kegiatan_2": "Nama Kegiatan 2",
+            "kegiatan_3": "Nama Kegiatan 3",
+            "status_0": "6 Selesai",
+            "status_1": "8 On Progress",
+            "status_2": "10 Belum Dilaksanakan",
+            "totalDana": "Rp123.456.768,-",
+            "tingkatPenyerapan": "20%"
+        }
+    ]
+}
