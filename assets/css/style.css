@@ -130,6 +130,15 @@
 	display: block;
 }
 
+.nama-bidang-wrap .kt-portlet{
+   border: 1px solid #0B1C2C3B;
+}
+
+.header-fixed {
+   position: fixed;
+   top: 0px; display:none;
+   background-color:white;
+}
 
 /*Responsive*/
 @media(max-width: 1024px){
