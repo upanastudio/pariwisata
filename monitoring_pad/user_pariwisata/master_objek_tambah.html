@@ -911,7 +911,10 @@
                         <input type="text" class="form-control" placeholder="-" id="trayekTranportasi" name="trayekTranportasi_`+ i + `">
                      </td>
                      <td class="text-center">
-                        <input type="text" class="form-control" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
+                        <div class="input-group">
+                           <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+                           <input type="text" class="form-control" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
+                        </div>
                      </td>
                      <td class="text-center">
                         <button type="button" class="btn btn-link list-hapus" id="btn_hapus" data-id="`+ i + `"> <span class="fa fa-times"></span> </button>

@@ -837,8 +837,7 @@
 									</div>
 								</div>
 							</div>
-
-							<!--end::Modal-->
+						<!--end::Modal-->
 
 					<!-- begin:: Footer -->
 					<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
@@ -954,11 +953,14 @@
             document.querySelector('#item_list').insertAdjacentHTML(
                'beforeend',
                `<tr role="row" class="item-list" data-id="` + i + `">
-                     <td class="text-center">
+                  <td class="text-center">
                         <input type="text" class="form-control" placeholder="-" id="trayekTranportasi" name="trayekTranportasi_`+ i + `">
                      </td>
                      <td class="text-center">
-                        <input type="text" class="form-control" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
+                        <div class="input-group">
+                           <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+                           <input type="text" class="form-control" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
+                        </div>
                      </td>
                      <td class="text-center">
                         <button type="button" class="btn btn-link list-hapus" id="btn_hapus" data-id="`+ i + `"> <span class="fa fa-times"></span> </button>
