@@ -640,6 +640,12 @@
 											</div>
 										</div>
 										<div class="kt-portlet__body">
+                                 <div class="kt-input-icon kt-input-icon--left">
+                                    <input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
+                                    <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                                       <span><i class="la la-search"></i></span>
+                                    </span>
+                                 </div>
 											<table class="table table-bordered table-hover table-checkable" id="tblListObjek">
                                  </table>
 										</div>
@@ -766,10 +772,11 @@
 						}).nodes().each(function(cell, i) {
 							cell.innerHTML = i + 1;
 						});
-					}).draw();
-					$('#activitiesSearch').on('keyup', function() {
-						table.search(this.value).draw();
-					});
+               }).draw();
+               
+					$('#generalSearch').on('keyup', function() {
+                  table.search(this.value).draw();
+               });
 				};
 				return {
 					init: function() {
