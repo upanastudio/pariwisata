@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- begin::Head -->
+<head>
+	<base href="../../">
+	<meta charset="utf-8" />
+	<title>User Pariwisata | Monitoring PAD Dashboard</title>
+	<meta name="description" content="Latest updates and statistic charts">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!--begin::Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
+	<!--end::Fonts -->
+	<!--begin::Page Vendors Styles(used by this page) -->
+	<!--end::Page Vendors Styles -->
+	<!--begin::Global Theme Styles(used by all pages) -->
+	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css">
+	<!--end::Global Theme Styles -->
+	<!--begin::Layout Skins(used by all pages) -->
+	<!--end::Layout Skins -->
+	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+	<link rel="stylesheet" href="assets/css/monitoring-style.css">
+</head>
+<!-- end::Head -->
+<!-- begin::Body -->
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+	<!-- begin:: Page -->
+	<!-- begin:: Header Mobile -->
+	<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
+		<div class="kt-header-mobile__logo">
+			<a href="monitoring_pad/user_pariwisata/index.html">
+				<img width="40px" alt="Logo" src="assets/media/logos/logo_sulsel.svg" />
+			</a>
+		</div>
+		<div class="kt-header-mobile__toolbar">
+			<button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
+			<button class="kt-header-mobile__toolbar-toggler" id="kt_header_mobile_toggler"><span></span></button>
+			<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
+			<button class="btn btn-logut">
+				<span class="fa fa-sign-out-alt"></span>
+			</button>
+		</div>
+	</div>
+	<!-- end:: Header Mobile -->
+	<div class="kt-grid kt-grid--hor kt-grid--root">
+		<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+			<!-- begin:: Aside -->
+			<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+			<div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
+				<!-- begin:: Aside -->
+				<div class="kt-aside__brand kt-grid__item  " id="kt_aside_brand">
+					<div class="kt-aside__brand-logo">
+						<a href="monitoring_pad/user_pariwisata/index.html">
+							<img width="80px" alt="Logo" src="assets/media/logos/logo_sulsel.svg" />
+						</a>
+					</div>
+				</div>
+				<!-- end:: Aside -->
+				<!-- begin:: Aside Menu -->
+            <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
+               <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1"
+                  data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
+                  <ul class="kt-menu__nav ">
+                     <li class="kt-menu__item  " aria-haspopup="true">
+                        <a href="monitoring_pad/user_pariwisata/index.html" class="kt-menu__link ">
+                           <span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-desktop"></i></span>
+                           <span class="kt-menu__link-text text-center">Monitoring PAD Dashboard</span>
+                        </a>
+                     </li>
+                     <li class="kt-menu__item kt-menu__item--active" aria-haspopup="true">
+                        <a href="monitoring_pad/user_pariwisata/master_objek.html" class="kt-menu__link ">
+                           <span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-coins"></i></span>
+                           <span class="kt-menu__link-text text-center">Master Objek</span>
+                        </a>
+                     </li>
+                     <li class="kt-menu__item" aria-haspopup="true">
+                        <a href="monitoring_pad/user_pariwisata/data_kunjungan.html" class="kt-menu__link ">
+                           <span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-file-alt"></i></span>
+                           <span class="kt-menu__link-text text-center">Data Kunjungan</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+					<!-- end:: Aside Menu -->
+				</div>
+				<!-- end:: Aside -->
+				<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+					<!-- begin:: Header -->
+					<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+						<!-- begin: Header Menu -->
+						<button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+						<div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
+							<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab ">
+								<ul class="kt-menu__nav ">
+									<div class="form-group mt-4">
+										<h3 id="userTag">User Pariwisata</h3>
+									</div>
+								</ul>
+							</div>
+						</div>
+						<!-- end: Header Menu -->
+						<!-- begin:: Header Topbar -->
+						<div class="kt-header__topbar">
+							<!--begin: Search -->
+							<div class="kt-header__topbar-item ">
+								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+									<!-- <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span> -->
+									<!-- <img class="kt-header__topbar-icon" src="assets/media/users/300_25.jpg" alt=""> -->
+									
+								</div>
+							</div>
+							<!--end: Search -->
+							<!--begin: Notifications -->
+							<div class="kt-header__topbar-item dropdown">
+								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+									<span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
+									<span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>
+								</div>
+								<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+									<form>
+										<!--begin: Head -->
+										<div class="kt-head kt-head--skin-light kt-head--fit-x kt-head--fit-b">
+											<h3 class="kt-head__title">
+												User Notifications
+												&nbsp;
+												<span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 new</span>
+											</h3>
+											<ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true">Alerts</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-toggle="tab" href="#topbar_notifications_events" role="tab" aria-selected="false">Events</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-toggle="tab" href="#topbar_notifications_logs" role="tab" aria-selected="false">Logs</a>
+												</li>
+											</ul>
+										</div>
+										<!--end: Head -->
+										<div class="tab-content">
+											<div class="tab-pane active show" id="topbar_notifications_notifications" role="tabpanel">
+												<div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-line-chart kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New order has been received
+															</div>
+															<div class="kt-notification__item-time">
+																2 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-box-1 kt-font-brand"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New customer is registered
+															</div>
+															<div class="kt-notification__item-time">
+																3 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-chart2 kt-font-danger"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Application has been approved
+															</div>
+															<div class="kt-notification__item-time">
+																3 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-image-file kt-font-warning"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New file has been uploaded
+															</div>
+															<div class="kt-notification__item-time">
+																5 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-drop kt-font-info"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New user feedback received
+															</div>
+															<div class="kt-notification__item-time">
+																8 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-pie-chart-2 kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																System reboot has been successfully completed
+															</div>
+															<div class="kt-notification__item-time">
+																12 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-favourite kt-font-danger"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New order has been placed
+															</div>
+															<div class="kt-notification__item-time">
+																15 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item kt-notification__item--read">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-safe kt-font-primary"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Company meeting canceled
+															</div>
+															<div class="kt-notification__item-time">
+																19 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-psd kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New report has been received
+															</div>
+															<div class="kt-notification__item-time">
+																23 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon-download-1 kt-font-danger"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Finance report has been generated
+															</div>
+															<div class="kt-notification__item-time">
+																25 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon-security kt-font-warning"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New customer comment recieved
+															</div>
+															<div class="kt-notification__item-time">
+																2 days ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-pie-chart kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New customer is registered
+															</div>
+															<div class="kt-notification__item-time">
+																3 days ago
+															</div>
+														</div>
+													</a>
+												</div>
+											</div>
+											<div class="tab-pane" id="topbar_notifications_events" role="tabpanel">
+												<div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-psd kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New report has been received
+															</div>
+															<div class="kt-notification__item-time">
+																23 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon-download-1 kt-font-danger"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Finance report has been generated
+															</div>
+															<div class="kt-notification__item-time">
+																25 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-line-chart kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New order has been received
+															</div>
+															<div class="kt-notification__item-time">
+																2 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-box-1 kt-font-brand"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New customer is registered
+															</div>
+															<div class="kt-notification__item-time">
+																3 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-chart2 kt-font-danger"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Application has been approved
+															</div>
+															<div class="kt-notification__item-time">
+																3 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-image-file kt-font-warning"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New file has been uploaded
+															</div>
+															<div class="kt-notification__item-time">
+																5 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-drop kt-font-info"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New user feedback received
+															</div>
+															<div class="kt-notification__item-time">
+																8 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-pie-chart-2 kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																System reboot has been successfully completed
+															</div>
+															<div class="kt-notification__item-time">
+																12 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-favourite kt-font-brand"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New order has been placed
+															</div>
+															<div class="kt-notification__item-time">
+																15 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item kt-notification__item--read">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-safe kt-font-primary"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Company meeting canceled
+															</div>
+															<div class="kt-notification__item-time">
+																19 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-psd kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New report has been received
+															</div>
+															<div class="kt-notification__item-time">
+																23 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon-download-1 kt-font-danger"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																Finance report has been generated
+															</div>
+															<div class="kt-notification__item-time">
+																25 hrs ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon-security kt-font-warning"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New customer comment recieved
+															</div>
+															<div class="kt-notification__item-time">
+																2 days ago
+															</div>
+														</div>
+													</a>
+													<a href="#" class="kt-notification__item">
+														<div class="kt-notification__item-icon">
+															<i class="flaticon2-pie-chart kt-font-success"></i>
+														</div>
+														<div class="kt-notification__item-details">
+															<div class="kt-notification__item-title">
+																New customer is registered
+															</div>
+															<div class="kt-notification__item-time">
+																3 days ago
+															</div>
+														</div>
+													</a>
+												</div>
+											</div>
+											<div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
+												<div class="kt-grid kt-grid--ver" style="min-height: 200px;">
+													<div class="kt-grid kt-grid--hor kt-grid__item kt-grid__item--fluid kt-grid__item--middle">
+														<div class="kt-grid__item kt-grid__item--middle kt-align-center">
+															All caught up!
+															<br>No new notifications.
+														</div>
+													</div>kt-
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!--end: Notifications -->
+							<!--begin: User Bar -->
+							<div class="kt-header__topbar-item kt-header__topbar-item--user">
+								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+									<div class="kt-header__topbar-user">
+										<span class="kt-hidden kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
+										<span class="kt-hidden kt-header__topbar-username kt-hidden-mobile">Sean</span>
+										<img class="rounded-circle" alt="Pic" src="assets/media/users/300_25.jpg" />
+										<!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+										<span class="kt-hidden kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bolder">S</span>
+									</div>
+								</div>
+								<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+									<!--begin: Head -->
+									<div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
+										<div class="kt-user-card__avatar">
+											<img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+											<!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+											<span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
+										</div>
+										<div class="kt-user-card__name">
+											Sean Stone
+										</div>
+										<div class="kt-user-card__badge">
+											<span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
+										</div>
+									</div>
+									<!--end: Head -->
+									<!--begin: Navigation -->
+									<div class="kt-notification">
+										<a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
+											<div class="kt-notification__item-icon">
+												<i class="flaticon2-calendar-3 kt-font-success"></i>
+											</div>
+											<div class="kt-notification__item-details">
+												<div class="kt-notification__item-title kt-font-bold">
+													My Profile
+												</div>
+												<div class="kt-notification__item-time">
+													Account settings and more
+												</div>
+											</div>
+										</a>
+										<a href="custom/apps/user/profile-3.html" class="kt-notification__item">
+											<div class="kt-notification__item-icon">
+												<i class="flaticon2-mail kt-font-warning"></i>
+											</div>
+											<div class="kt-notification__item-details">
+												<div class="kt-notification__item-title kt-font-bold">
+													My Messages
+												</div>
+												<div class="kt-notification__item-time">
+													Inbox and tasks
+												</div>
+											</div>
+										</a>
+										<a href="custom/apps/user/profile-2.html" class="kt-notification__item">
+											<div class="kt-notification__item-icon">
+												<i class="flaticon2-rocket-1 kt-font-danger"></i>
+											</div>
+											<div class="kt-notification__item-details">
+												<div class="kt-notification__item-title kt-font-bold">
+													My Activities
+												</div>
+												<div class="kt-notification__item-time">
+													Logs and notifications
+												</div>
+											</div>
+										</a>
+										<a href="custom/apps/user/profile-3.html" class="kt-notification__item">
+											<div class="kt-notification__item-icon">
+												<i class="flaticon2-hourglass kt-font-brand"></i>
+											</div>
+											<div class="kt-notification__item-details">
+												<div class="kt-notification__item-title kt-font-bold">
+													My Tasks
+												</div>
+												<div class="kt-notification__item-time">
+													latest tasks and projects
+												</div>
+											</div>
+										</a>
+										<a href="custom/apps/user/profile-1/overview.html" class="kt-notification__item">
+											<div class="kt-notification__item-icon">
+												<i class="flaticon2-cardiogram kt-font-warning"></i>
+											</div>
+											<div class="kt-notification__item-details">
+												<div class="kt-notification__item-title kt-font-bold">
+													Billing
+												</div>
+												<div class="kt-notification__item-time">
+													billing & statements <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill kt-badge--rounded">2 pending</span>
+												</div>
+											</div>
+										</a>
+										<div class="kt-notification__custom kt-space-between">
+											<a href="custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+											<a href="custom/user/login-v2.html" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a>
+										</div>
+									</div>
+									<!--end: Navigation -->
+								</div>
+							</div>
+							<!--end: User Bar -->
+						</div>
+						<!-- end:: Header Topbar -->
+					</div>
+					<!-- end:: Header -->
+					<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+						<!-- begin:: Content Head -->
+						<div class="kt-subheader  kt-grid__item" id="kt_subheader">
+							<div class="kt-container  kt-container--fluid ">
+								<div class="kt-subheader__main">
+									<h3 class="kt-subheader__title">Master Objek</h3>
+                           <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                           <h3 class="kt-subheader__title">Tambah Objek</h3>
+								</div>
+								<div class="kt-subheader__toolbar">
+								</div>
+							</div>
+						</div>
+						<!-- end:: Content Head -->
+						<!-- begin:: Content -->
+						<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+							<div class="row justify-content-center">
+                        <div class="col-10">
+                           <div class="kt-portlet kt-portlet--mobile">
+										<div class="kt-portlet__head">
+											<div class="kt-portlet__head-label">
+												<h3 class="kt-portlet__head-title">
+													Tambah Objek
+												</h3>
+                                 </div>
+                                 <div class="kt-portlet__head-toolbar kt-hidden">
+												
+											</div>
+                              </div>
+                              <form class="kt-form">
+                                 <div class="kt-portlet__body">
+                                    <section id="informasiUmum" class="mb-3">
+                                       <h5 class="">Informasi Umum</h5>
+                                       <hr>
+                                       <div class="form-group row">
+                                          <label class="col-2 col-form-label">Kategori</label>
+                                          <div class="col-10">
+                                             <div class="kt-radio-inline">
+                                                <label class="kt-radio kt-radio--brand">
+                                                   <input onclick="pilihHotel()" type="radio" name="kategori" value="valuable" checked> Hotel
+                                                   <span></span>
+                                                </label>
+                                                <label class="kt-radio kt-radio--brand">
+                                                   <input onclick="pilihTransportasi()" type="radio" name="kategori" value="valuable" > Transportasi
+                                                   <span></span>
+                                                </label>
+                                                <label class="kt-radio kt-radio--brand">
+                                                   <input onclick="pilihTempatWisata()" type="radio" name="kategori" value="valuable" > Tempat Wisata
+                                                   <span></span>
+                                                </label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="namaObjek" class="col-2 col-form-label">Nama Objek</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="text" placeholder="input nama objek" id="namaObjek" name="namaObjek">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="namaObjek" class="col-2 col-form-label">Kabupaten/Kota</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="text" placeholder="input nama kabupaten/kota" id="kabupatenKota" name="kabupatenKota">
+                                          </div>
+                                       </div>
+                                       <div class="kategori-wrap">
+                                          <div id="pilihanHotel">
+                                             <div class="form-group row">
+                                                <label for="namaObjek" class="col-2 col-form-label">Nilai Ekonomi per Malam</label>
+                                                <div class="col-10">
+                                                   <div class="input-group">
+                                                      <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+                                                      <input type="text" class="form-control" placeholder="-" id="nilaiEkonomi" name="nilaiEkonomi">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div id="pilihanTransportasi" class="none">
+                                             <div id="container-transportasi" class="table-responsive">
+                                                <table class="table well-align-table table-mobile"
+                                                   role="grid" id="table_request_transportasi">
+                                                   <thead>
+                                                      <tr role="row">
+                                                         <th style="width: 50%">Trayek Transportasi</th>
+                                                         <th style="width: 45%">Nilai Ekonomi per Orang</th>
+                                                         <th style="width: 5%">Aksi</th>
+                                                      </tr>
+                                                   </thead>
+                                                   <tbody id="item_list">
+                                                   </tbody>
+                                                </table>
+                                             </div>
+                                             <div style="text-align:center;">
+                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i
+                                                      class="flaticon-add"></i>Tambah Trayek</button>
+                                             </div>
+                                          </div>
+                                          <div id="pilihanTempatWisata" class="none">
+                                             <div class="form-group row justify-content-center">
+                                                <label for="namaObjek" class="col-12 col-form-label">Nilai Ekonomi Per Wisatawan</label>
+                                                <div class="col-10">
+                                                  <div class="row">
+                                                     <div class="col-6">
+                                                      <div class="form-group">
+                                                         <label>Mancanegara</label>
+                                                         <div class="input-group">
+                                                            <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+                                                            <input type="text" class="form-control" placeholder="-" id="nilaiEkonomiMancanegara" name="nilaiEkonomiMancanegara">
+                                                         </div>
+                                                      </div>
+                                                     </div>
+                                                     <div class="col-6">
+                                                      <div class="form-group">
+                                                         <label>Lokal</label>
+                                                         <div class="input-group">
+                                                            <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+                                                            <input type="text" class="form-control" placeholder="-" id="nilaiEkonomiLokal" name="nilaiEkonomiLokal">
+                                                         </div>
+                                                      </div>
+                                                     </div>
+                                                  </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </section>
+                                    <section id="lokasiObjek" class="mb-3">
+                                       <h5 class="">Lokasi Objek</h5>
+                                       <hr>
+                                       <div class="form-group row">
+                                          <label for="latitude" class="col-2 col-form-label">Latitude</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="text" placeholder="input latitude" id="latitude" name="latitude">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="longitude" class="col-2 col-form-label">Longitude</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="text" placeholder="input longitude" id="longitude" name="longitude">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="" class="col-12 col-form-label">Pin Point</label>
+                                          <div class="col-12">
+                                             <div id="peta">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.8126106199684!2d119.4031027143706!3d-5.133857753368861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02b011ce37ef%3A0x28ed3928c1b6cf23!2sBenteng%20Rotterdam%20Makassar!5e0!3m2!1sid!2sid!4v1583051220918!5m2!1sid!2sid" frameborder="0" style="border:0;border-radius: 10px" allowfullscreen=""></iframe>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </section>
+                                    <section id="pengguna">
+                                       <h5 class="">User</h5>
+                                       <hr>
+                                       <div class="form-group row">
+                                          <label for="username" class="col-2 col-form-label">Username</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="text" placeholder="input username" id="username" name="username">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="password" class="col-2 col-form-label">Password</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="password" placeholder="input password" id="password" name="password">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="konfirmasiPassword" class="col-2 col-form-label">Konfirmasi Password</label>
+                                          <div class="col-10">
+                                             <input class="form-control" type="password" placeholder="input password" id="konfirmasiPassword" name="konfirmasiPassword">
+                                          </div>
+                                       </div>
+                                    </section>
+                                 </div>
+                                 <div class="kt-portlet__foot text-right">
+                                    <a href="monitoring_pad/user_pariwisata/master_objek.html" class="btn btn-secondary">
+                                       <i class="fa fa-arrow-left"></i> Kembali
+                                    </a>
+                                    <button class="btn btn-success btn_save">
+                                       <i class="fa fa-save"></i> Simpan
+                                    </button>
+                                 </div>
+                              </form>
+									</div>
+                        </div>
+                     </div>
+						</div>
+						<!-- end:: Content -->
+					</div>
+					<!-- begin:: Footer -->
+					<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
+						<div class="kt-container  kt-container--fluid ">
+							<div class="kt-footer__copyright">
+								2019&nbsp;&copy;&nbsp;<a href="http://keenthemes.com/metronic" target="_blank" class="kt-link">Keenthemes</a>
+							</div>
+							<div class="kt-footer__menu">
+								<a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">About</a>
+								<a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
+								<a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
+							</div>
+						</div>
+					</div>
+					<!-- end:: Footer -->
+				</div>
+			</div>
+		</div>
+		<!-- end:: Page -->
+		
+		<!-- end::Quick Panel -->
+		<!-- begin::Global Config(global config for global JS sciprts) -->
+		<script>
+			var KTAppOptions = {
+				"colors": {
+					"state": {
+						"brand": "#2c77f4",
+						"light": "#ffffff",
+						"dark": "#282a3c",
+						"primary": "#5867dd",
+						"success": "#34bfa3",
+						"info": "#36a3f7",
+						"warning": "#ffb822",
+						"danger": "#fd3995"
+					},
+					"base": {
+						"label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+						"shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+					}
+				}
+			};
+		</script>
+		<!-- end::Global Config -->
+		<!--begin::Global Theme Bundle(used by all pages) -->
+		<script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+		<script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
+		<script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
+		<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+		<!-- end: global -->
+
+		<script>
+         var KTSweetAlert2Demo = function() {
+
+         // Demos
+         var initDemos = function() {
+            // Sweetalert Demo 1
+
+            $('.btn_save').click(function(e) {
+               swal.fire("Berhasil!", "Data Telah Tersimpan!", "success");
+            });
+
+            $('#kt_sweetalert_demo_9').click(function(e) {
+               swal.fire({
+                     title: 'Are you sure?',
+                     text: "You won't be able to revert this!",
+                     type: 'warning',
+                     showCancelButton: true,
+                     confirmButtonText: 'Yes, delete it!',
+                     cancelButtonText: 'No, cancel!',
+                     reverseButtons: true
+               }).then(function(result){
+                     if (result.value) {
+                        swal.fire(
+                           'Deleted!',
+                           'Your file has been deleted.',
+                           'success'
+                        )
+                        // result.dismiss can be 'cancel', 'overlay',
+                        // 'close', and 'timer'
+                     } else if (result.dismiss === 'cancel') {
+                        swal.fire(
+                           'Cancelled',
+                           'Your imaginary file is safe :)',
+                           'error'
+                        )
+                     }
+               });
+            });
+};
+
+         return {
+            // Init
+            init: function() {
+               initDemos();
+            },
+         };
+         }();
+
+         // Class Initialization
+         jQuery(document).ready(function() {
+         KTSweetAlert2Demo.init();
+         });
+      </script>
+
+      <script>
+         // Tambah item
+         var i = 1;
+         $('#item_add').click(function () {
+            document.querySelector('#item_list').insertAdjacentHTML(
+               'beforeend',
+               `<tr role="row" class="item-list" data-id="` + i + `">
+                     <td class="text-center">
+                        <input type="text" class="form-control" placeholder="-" id="trayekTranportasi" name="trayekTranportasi_`+ i + `">
+                     </td>
+                     <td class="text-center">
+                        <input type="text" class="form-control" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
+                     </td>
+                     <td class="text-center">
+                        <button type="button" class="btn btn-link list-hapus" id="btn_hapus" data-id="`+ i + `"> <span class="fa fa-times"></span> </button>
+                     </td>
+                  </tr>`
+            );
+            i++
+         });
+
+         $('document').ready(function () {
+            $('#item_add').click();
+         });
+
+
+         $('#container-transportasi').on('click', '.list-hapus', function (e) {
+            let id = $(this).data('id');
+            // if (id > 1) {
+            $('.item-list[data-id="' + id + '"]').remove();
+            // }
+
+         });
+
+         // Form validation
+         $('#kt_form_request_barang').on('submit', function (event) {
+            $('.request_required').each(function (item) {
+               $(this).rules('add', {
+                  required: true
+               })
+            });
+            event.preventDefault();
+         })
+
+         jQuery.extend(jQuery.validator.messages, {
+            required: "Required"
+         });
+
+         $('#kt_form_request_barang').validate({
+            rules: {
+               request_notes: {
+                  required: true
+               }
+            },
+            messages: {
+               request_notes: {
+                  required: "This field is required"
+               }
+            }
+         });
+
+      </script>
+      <script>
+         function pilihHotel(){
+            document.getElementById('pilihanHotel').style.display ='block';
+            document.getElementById('pilihanTransportasi').style.display = 'none';
+            document.getElementById('pilihanTempatWisata').style.display = 'none';
+         }
+         function pilihTransportasi(){
+            document.getElementById('pilihanHotel').style.display ='none';
+            document.getElementById('pilihanTransportasi').style.display = 'block';
+            document.getElementById('pilihanTempatWisata').style.display = 'none';
+         }
+         function pilihTempatWisata(){
+            document.getElementById('pilihanHotel').style.display ='none';
+            document.getElementById('pilihanTransportasi').style.display = 'none';
+            document.getElementById('pilihanTempatWisata').style.display = 'block';
+         }
+      </script>
+		<!--end::Page Scripts -->
+	</body>
+	<!-- end::Body -->
+	</html>
