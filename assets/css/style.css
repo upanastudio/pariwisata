@@ -140,6 +140,22 @@
    background-color:white;
 }
 
+.btn-inputan{
+   width: 90%;
+}
+
+.atau{
+   padding-top: 7px;
+}
+
+.padding-icon-excel{
+   padding-top: 4px;
+}
+.icon-excel{
+   font-size: 2rem;
+   color: seagreen;
+}
+
 /*Responsive*/
 @media(max-width: 1024px){
 	.d-sm-none{

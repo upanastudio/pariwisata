@@ -671,6 +671,12 @@
 										</div>
 									</div>
 									<div class="kt-portlet__body" id="tableRekapWrap">
+                              <div class="kt-input-icon kt-input-icon--left">
+                                 <input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
+                                 <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                                    <span><i class="la la-search"></i></span>
+                                 </span>
+                              </div>
 										<table class="table table-bordered" id="tbl_mutasi">
 											<thead class="">
 												<tr>
@@ -828,106 +834,14 @@
 					],
 
 				});
-				$('#kt_form_status').on('change', function() {
-					datatable.search($(this).val().toLowerCase(), 'kategori');
+				$('#generalSearch').on('keyup', function() {
+					table.search(this.value).draw();
 				});
-
-				$('#kt_form_type').on('change', function() {
-					datatable.search($(this).val().toLowerCase(), 'status');
-				});
-
-				$('#kt_form_status,#kt_form_type').selectpicker();
-
-			};
-			var tabel_inventaris = function() {
-				var table = $('#tbl_inventaris').DataTable({
-					responsive: false,
-					scrollX: true,
-					dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-					lengthMenu: [5, 10, 25, 50],
-					pageLength: 10,
-					language: {
-						'lengthMenu': 'Display _MENU_',
-					},
-					searchDelay: 500,
-					processing: true,
-					serverSide: false,
-					ajax: {
-						url: 'assets/source/inventaris.json',
-						type: 'POST',
-					},
-					search: {
-						input: $('#generalSearch'),
-					},
-					columns: [
-					{
-						data: 'urut',
-						title: 'Urut',
-					},{
-						data: 'kodeBarang',
-						title: 'Kode Barang',
-					},{
-						data: 'register',
-						title: 'Register',
-					},{
-						data: 'namaBarang',
-						title: 'Nama / Jenis Barang',
-					},{
-						data: 'merk',
-						title: 'Merk / Type',
-					},{
-						data: 'noSertifikat',
-						title: 'No. Sertifikat',
-					},{
-						data: 'bahan',
-						title: 'Bahan',
-					},{
-						data: 'asal',
-						title: 'Asal / Cara Perolehan Barang',
-					},{
-						data: 'tahunPembelian',
-						title: 'Tahun Pembelian',
-					},{
-						data: 'ukuranBarang',
-						title: 'Ukuran Barang',
-					},{
-						data: 'satuanBarang',
-						title: 'Satuan Barang',
-					},{
-						data: 'keadaanBarang',
-						title: 'Keadaan Barang',
-					},{
-						data: 'jumlahBarang',
-						title: 'Jumlah',
-					},{
-						data: 'hargaBarang',
-						title: 'Harga',
-					},{
-						data: 'keterangan',
-						title: 'Keterangan',
-					}],
-					columnDefs: [{
-						targets: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-						className: 'text-center',
-					},
-					],
-
-				});
-				$('#kt_form_status').on('change', function() {
-					datatable.search($(this).val().toLowerCase(), 'kategori');
-				});
-
-				$('#kt_form_type').on('change', function() {
-					datatable.search($(this).val().toLowerCase(), 'status');
-				});
-
-				$('#kt_form_status,#kt_form_type').selectpicker();
 
 			};
 			return {
 				init: function() {
 					tabel_mutasi ();
-					tabel_inventaris ();
 				},
 			};
 		}();

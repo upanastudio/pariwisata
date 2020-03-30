@@ -36,7 +36,6 @@
 		#tableRekapWrap th{
 			background-color: #f4f4f4;
 		}
-		
 	</style>
 </head>
 <!-- end::Head -->
@@ -142,7 +141,6 @@
 							<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
 								<!-- <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span> -->
 								<!-- <img class="kt-header__topbar-icon" src="assets/media/users/300_25.jpg" alt=""> -->
-
 							</div>
 						</div>
 						<!--end: Search -->
@@ -679,6 +677,12 @@
 										</div>
 									</div>
 									<div class="kt-portlet__body" id="tableRekapWrap">
+                              <div class="kt-input-icon kt-input-icon--left">
+                                 <input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
+                                 <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                                    <span><i class="la la-search"></i></span>
+                                 </span>
+                              </div>
 										<table class="table table-bordered table-hover table-checkable" id="tblManajemenKendaraan">
 										</table>
 									</div>
@@ -742,7 +746,6 @@
 
 	<!-- end: gmaps -->
 	<script>
-
 		"use strict";
 		var KTDatatablesSearchOptionsAdvancedSearch = function() {
 			$.fn.dataTable.Api.register('column().title()', function() {
@@ -792,7 +795,11 @@
 			            	title: 'Penanggung Jawab',
 			            },{
 			            	data: 'tglJatuhTempo',
-			            	title: 'Jatuh Tempo Pajak',
+                        title: 'Jatuh Tempo Pajak',
+                        width: 150,
+                        render: function(data, type, row, meta) {
+			            		return '<input class="form-control inputJatuhTempo" placeholder="Belum Ditetapkan" type="text" value="'+data+'" id="tglJatuhTempo" name="tglJatuhTempo">'
+			            	},
 			            },{
 			            	data: 'sisaHari',
 			            	title: 'Sisa Hari',
@@ -825,9 +832,19 @@
 						cell.innerHTML = i + 1;
 					});
 				}).draw();
-				$('#activitiesSearch').on('keyup', function() {
+				$('#generalSearch').on('keyup', function() {
 					table.search(this.value).draw();
-				});
+            });
+
+            $('#tblManajemenKendaraan').on('focus', '.inputJatuhTempo', function(){
+               $(".inputJatuhTempo").attr("type","Date");
+            });
+            $('#tblManajemenKendaraan').on('blur', '.inputJatuhTempo', function(){
+               $(".inputJatuhTempo").attr("type","Text");
+            });
+           
+
+            
 			};
 
 			
@@ -840,7 +857,10 @@
 		jQuery(document).ready(function() {
 			KTDatatablesSearchOptionsAdvancedSearch.init();
 		});
-	</script>
+   </script>
+   <script>
+    
+   </script>
 </body>
 <!-- end::Body -->
 </html>

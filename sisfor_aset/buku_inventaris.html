@@ -673,12 +673,18 @@
 											</h3>
 										</div>
 										<div class="kt-portlet__head-toolbar">
-											<button class="btn btn-success d-sm-none">
-												<i class="fa fa-plus"></i> TAMBAH DATA
-											</button>
+											<a href="sisfor_aset/buku_inventaris_tambah.html" class="btn btn-primary">
+												<i class="fa fa-plus"></i> Tambah Data Aset
+                                 </a>
 										</div>
 									</div>
 									<div class="kt-portlet__body" id="tableRekapWrap">
+                              <div class="kt-input-icon kt-input-icon--left">
+                                 <input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
+                                 <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                                    <span><i class="la la-search"></i></span>
+                                 </span>
+                              </div>
 										<table class="table table-bordered" id="tbl_inventaris">
 											<thead class="">
 												<tr>
@@ -921,15 +927,10 @@
 					],
 
 				});
-				$('#kt_form_status').on('change', function() {
-					datatable.search($(this).val().toLowerCase(), 'kategori');
+				$('#generalSearch').on('keyup', function() {
+					table.search(this.value).draw();
 				});
 
-				$('#kt_form_type').on('change', function() {
-					datatable.search($(this).val().toLowerCase(), 'status');
-				});
-
-				$('#kt_form_status,#kt_form_type').selectpicker();
 
 			};
 			return {

@@ -8,7 +8,7 @@
             "jenisKendaraan": "Motor",
             "noPolisi": "DD 1232 YT",
             "penanggungJawab": "Pak Roni",
-            "tglJatuhTempo": "12/11/2019",
+            "tglJatuhTempo": "Belum Ditetapkan",
             "sisaHari": "-22 hari",
             "status" : "tunggakan"
         },
@@ -17,7 +17,7 @@
             "jenisKendaraan": "Mobil Sedan",
             "noPolisi": "DD 1232 GG",
             "penanggungJawab": "Pak Desta",
-            "tglJatuhTempo": "23/12/2019",
+            "tglJatuhTempo": "2020-02-08",
             "sisaHari": "120 hari",
             "status" : "belum bayar"
         },
@@ -26,7 +26,7 @@
            "jenisKendaraan": "Mobil Sedan",
             "noPolisi": "DD 1232 GG",
             "penanggungJawab": "Pak Desta",
-            "tglJatuhTempo": "23/12/2019",
+            "tglJatuhTempo": "2020-02-08",
             "sisaHari": "120 hari",
             "status" : "tunggakan"
         },
@@ -35,7 +35,7 @@
              "jenisKendaraan": "Mobil Sedan",
             "noPolisi": "DD 1232 GG",
             "penanggungJawab": "Pak Desta",
-            "tglJatuhTempo": "23/12/2019",
+            "tglJatuhTempo": "Belum Ditetapkan",
             "sisaHari": "120 hari",
             "status" : "belum bayar"
         },
@@ -44,7 +44,7 @@
              "jenisKendaraan": "Mobil Sedan",
             "noPolisi": "DD 1232 GG",
             "penanggungJawab": "Pak Desta",
-            "tglJatuhTempo": "23/12/2019",
+            "tglJatuhTempo": "2020-02-08",
             "sisaHari": "120 hari",
             "status" : "selesai"
         }
