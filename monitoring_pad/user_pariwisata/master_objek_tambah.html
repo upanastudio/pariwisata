@@ -151,7 +151,7 @@
                                           <div class="col-10">
                                              <div class="kt-radio-inline">
                                                 <label class="kt-radio kt-radio--brand">
-                                                   <input onclick="pilihHotel()" type="radio" name="kategori" value="valuable" checked> Hotel
+                                                   <input onclick="pilihTempatWisata()" type="radio" name="kategori" value="valuable" checked> Tempat Wisata
                                                    <span></span>
                                                 </label>
                                                 <label class="kt-radio kt-radio--brand">
@@ -159,7 +159,7 @@
                                                    <span></span>
                                                 </label>
                                                 <label class="kt-radio kt-radio--brand">
-                                                   <input onclick="pilihTempatWisata()" type="radio" name="kategori" value="valuable" > Tempat Wisata
+                                                   <input onclick="pilihHotel()" type="radio" name="kategori" value="valuable" > Hotel
                                                    <span></span>
                                                 </label>
                                              </div>
@@ -172,13 +172,38 @@
                                           </div>
                                        </div>
                                        <div class="form-group row">
-                                          <label for="namaObjek" class="col-2 col-form-label">Kabupaten/Kota</label>
+                                          <label for="kabupatenKota" class="col-2 col-form-label">Kabupaten/Kota</label>
                                           <div class="col-10">
-                                             <input class="form-control" type="text" placeholder="input nama kabupaten/kota" id="kabupatenKota" name="kabupatenKota">
+                                             <select class="form-control kt-select2 kt_select2" id="kabupatenKota" name="kabupatenKota">
+                                                <option value="1">Kabupaten Bantaeng</option>
+                                                <option value="2">Kabupaten Barru</option>
+                                                <option value="3">Kabupaten Bone</option>
+                                                <option value="4">Kabupaten Bulukumba</option>
+                                                <option value="5">Kabupaten Enrekang</option>
+                                                <option value="6">Kabupaten Gowa</option>
+                                                <option value="7">Kabupaten Jeneponto</option>
+                                                <option value="8">Kabupaten Kepulauan Selayar</option>
+                                                <option value="9">Kabupaten Luwu</option>
+                                                <option value="10">Kabupaten Luwu Timur</option>
+                                                <option value="11">Kabupaten Luwu Utara</option>
+                                                <option value="12">Kabupaten Maros</option>
+                                                <option value="13">Kabupaten Pangkajene dan Kepulauan</option>
+                                                <option value="14">Kabupaten Pinrang</option>
+                                                <option value="15">Kabupaten Sidenreng Rappang</option>
+                                                <option value="16">Kabupaten Sinjai</option>
+                                                <option value="17">Kabupaten Soppeng</option>
+                                                <option value="18">Kabupaten Takalar</option>
+                                                <option value="19">Kabupaten Tana Toraja</option>
+                                                <option value="20">Kabupaten Toraja Utara</option>
+                                                <option value="21">Kabupaten Wajo</option>
+                                                <option value="22">Kota Makassar</option>
+                                                <option value="23">Kota Palopo</option>
+                                                <option value="24">Kota Kota Pare-Pare</option>
+                                             </select>
                                           </div>
                                        </div>
                                        <div class="kategori-wrap">
-                                          <div id="pilihanHotel">
+                                          <div id="pilihanHotel" class="none">
                                              <div class="form-group row">
                                                 <label for="namaObjek" class="col-2 col-form-label">Nilai Ekonomi per Malam</label>
                                                 <div class="col-10">
@@ -205,34 +230,58 @@
                                                 </table>
                                              </div>
                                              <div style="text-align:center;">
-                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add"><i
-                                                      class="flaticon-add"></i>Tambah Trayek</button>
+                                                <button type="button" class="btn btn-link" style="padding:0px;" id="item_add">
+                                                   <i class="flaticon-add"></i>Tambah Trayek
+                                                </button>
                                              </div>
                                           </div>
-                                          <div id="pilihanTempatWisata" class="none">
+                                          <div id="pilihanTempatWisata">
                                              <div class="form-group row justify-content-center">
                                                 <label for="namaObjek" class="col-12 col-form-label">Nilai Ekonomi Per Wisatawan</label>
                                                 <div class="col-10">
                                                   <div class="row">
                                                      <div class="col-6">
                                                       <div class="form-group">
-                                                         <label>Mancanegara</label>
+                                                         <label>Lokal Dewasa</label>
                                                          <div class="input-group">
                                                             <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
-                                                            <input type="text" class="form-control" placeholder="-" id="nilaiEkonomiMancanegara" name="nilaiEkonomiMancanegara">
+                                                            <input type="text" class="form-control uang" placeholder="-" id="nilaiEkonomiDewasa" name="nilaiEkonomiMancanegara">
                                                          </div>
                                                       </div>
                                                      </div>
                                                      <div class="col-6">
                                                       <div class="form-group">
-                                                         <label>Lokal</label>
+                                                         <label>Lokal Anak-anak</label>
                                                          <div class="input-group">
                                                             <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
-                                                            <input type="text" class="form-control" placeholder="-" id="nilaiEkonomiLokal" name="nilaiEkonomiLokal">
+                                                            <input type="text" class="form-control uang" placeholder="-" id="nilaiEkonomiAnak" name="nilaiEkonomiLokal">
                                                          </div>
                                                       </div>
                                                      </div>
                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="form-group row justify-content-center">
+                                                <label for="namaObjek" class="col-12 col-form-label">Nilai Ekonomi Resu</label>
+                                                <div class="col-10">
+                                                   <div id="container-resu" class="table-responsive">
+                                                      <table class="table well-align-table table-mobile"
+                                                      role="grid" id="tabel-resu">
+                                                         <thead>
+                                                            <tr role="row">
+                                                               <th style="width: 50%">Nilai Ekonomi Resu</th>
+                                                               <th style="width: 45%">Jumlah</th>
+                                                               <th style="width: 5%">Aksi</th>
+                                                            </tr>
+                                                         </thead>
+                                                         <tbody id="item_list_resu"></tbody>
+                                                      </table>
+                                                   </div>
+                                                   <div style="text-align:center;">
+                                                      <button type="button" class="btn btn-link" style="padding:0px;" id="item_add_resu">
+                                                         <i class="flaticon-add"></i>Tambah Data
+                                                      </button>
+                                                   </div>
                                                 </div>
                                              </div>
                                           </div>
@@ -346,9 +395,10 @@
 		<script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
 		<script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
 		<script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
-		<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+      <script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+      <script src="assets/js/jquery.mask.min.js" type="text/javascript"></script>
 		<!-- end: global -->
-
+      
 		<script>
          var KTSweetAlert2Demo = function() {
 
@@ -402,7 +452,43 @@
          KTSweetAlert2Demo.init();
          });
       </script>
+      <script>
+          //tambah item
+          var x = 1;
+          $('#item_add_resu').click(function(){
+             document.querySelector('#item_list_resu').insertAdjacentHTML(
+               'beforeend',
+               `<tr role="row" class="item-list-resu" data-id="`+ x +`">
+                  <td class="text-center">
+                     <input type="text" class="form-control" placeholder="input disini" id="nilaiEkonomiResu" name="nilaiEkonomiResu`+ x + `">
+                  </td>
+                  <td class="text-center">
+                     <div class="input-group">
+                        <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
+                        <input type="text" class="form-control uang" placeholder="0" id="jumlahResu" name="jumlahResu`+ x + `">
+                     </div>
+                  </td>
+                  <td class="text-center">
+                     <button type="button" class="btn btn-link list-hapus-resu" id="btn_hapus_resu" data-id="`+ x + `"> <span class="fa fa-times"></span> </button>
+                   </td>
+               </tr>`
+             );
+             $( '.uang' ).mask('000.000.000', {reverse: true});
+             x++;
+          });
+          
+          $('document').ready(function(){
+             $('#item_add_resu').click();
+          })
 
+          $('#container-resu').on('click', '.list-hapus-resu', function (e) {
+            let id = $(this).data('id');
+            // if (id > 1) {
+            $('.item-list-resu[data-id="' + id + '"]').remove();
+            // }
+
+         });
+      </script>
       <script>
          // Tambah item
          var i = 1;
@@ -416,7 +502,7 @@
                      <td class="text-center">
                         <div class="input-group">
                            <div class="input-group-prepend"><span class="input-group-text">Rp</span></div>
-                           <input type="text" class="form-control" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
+                           <input type="text" class="form-control uang" placeholder="-" id="nilaiPerOrang" name="nilaiPerOrang_`+ i + `">
                         </div>
                      </td>
                      <td class="text-center">
@@ -424,6 +510,7 @@
                      </td>
                   </tr>`
             );
+            $( '.uang' ).mask('000.000.000', {reverse: true});
             i++
          });
 
@@ -485,6 +572,26 @@
             document.getElementById('pilihanTempatWisata').style.display = 'block';
          }
       </script>
+      <script>
+         var KTSelect2 = function() {
+            var demos = function() {
+               $('.kt_select2, #kt_select2_1_validate').select2({
+                  placeholder: "Select a state"
+               });
+   
+               return {
+                  init: function() {
+                     demos();
+                     modalDemos();
+                  }
+               };
+            }();
+         }();
+   
+         jQuery(document).ready(function() {
+            KTSelect2.init();
+         });
+      </script>	
 		<!--end::Page Scripts -->
 	</body>
 	<!-- end::Body -->

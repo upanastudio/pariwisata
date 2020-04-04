@@ -13,6 +13,11 @@
          "tanggal": "01/02/2020",
          "lokal": "12",
          "mancanegara" : "23",
+         "tdNoSeri" : "#12345",
+         "tdLembar": "123",
+         "taNoSeri" : "#456",
+         "taLembar" : "321",
+         "totalResu": "Rp.123",
          "total": "35"
       },
       {
@@ -24,9 +29,13 @@
          "tanggal": "01/02/2020",
          "lokal": "12",
          "mancanegara" : "23",
+         "tdNoSeri" : "#12345",
+         "tdLembar": "123",
+         "taNoSeri" : "#456",
+         "taLembar" : "321",
+         "totalResu": "Rp.123",
          "total": "35"
-      },
-      {
+      },{
          "no":3,
          "kategori": "Tempat Wisata",
          "namaObjek": "Pantai Bira",
@@ -35,6 +44,11 @@
          "tanggal": "01/02/2020",
          "lokal": "12",
          "mancanegara" : "23",
+         "tdNoSeri" : "#12345",
+         "tdLembar": "123",
+         "taNoSeri" : "#456",
+         "taLembar" : "321",
+         "totalResu": "Rp.123",
          "total": "35"
       }
    ]

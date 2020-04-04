@@ -156,6 +156,8 @@
    color: seagreen;
 }
 
+
+
 /*Responsive*/
 @media(max-width: 1024px){
 	.d-sm-none{

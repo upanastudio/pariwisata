@@ -165,10 +165,12 @@ body{
    background-color: #FDA109;
    color: white;
 }
-.list-hapus {
+.list-hapus,
+.list-hapus-resu {
    color: salmon;
 }
-.list-hapus:hover{
+.list-hapus:hover,
+.list-hapus-resu:hover{
    color: crimson !important;
    background-color: transparent !important;
 }
@@ -182,7 +184,9 @@ body{
 }
 
 #item_add:hover,
-#item_add:focus{
+#item_add:focus,
+#item_add_resu:hover,
+#item_add_resu:focus{
    color: #0B1C2C !important;
    background-color: transparent !important;
 }
@@ -205,9 +209,15 @@ body{
    font-size: 1.5rem;
 }
 
+.sub-jumlah{
+   font-size: .95rem;
+}
+
 #namaHotel,#lokasiHotel{
    font-size: 1.5rem;
 }
+
+
 
 /*Responsive*/
 @media(max-width: 1024px){
