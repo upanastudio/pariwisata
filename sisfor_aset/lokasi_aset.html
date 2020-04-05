@@ -22,19 +22,14 @@
 	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	<link rel="stylesheet" href="assets/css/style.css">
 	<style>
-		#presentasi {
-			width: 100%;
-			height: 500px;
-		}
-		#statistikAset {
-			width: 100%;
-			height: 500px;
-		}
 		th{
 			text-align: center;
 		}
 		#tableRekapWrap th{
 			background-color: #f4f4f4;
+		}
+		#googleMap{
+			border-radius: 10px;
 		}
 		
 	</style>
@@ -87,8 +82,8 @@
 							</li>
 							<li class="kt-menu__item  " aria-haspopup="true">
 								<a href="sisfor_aset/rekap_mutasi.html" class="kt-menu__link ">
-								<!-- 	<object type="image/svg+xml" data="assets/media/misc/move.svg" class="kt-menu__link-icon icon icon-speed" width="50%"></object> -->
-								<span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-copy"></i></span>
+									<!-- 	<object type="image/svg+xml" data="assets/media/misc/move.svg" class="kt-menu__link-icon icon icon-speed" width="50%"></object> -->
+									<span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-copy"></i></span>
 									<span class="kt-menu__link-text text-center">Rekap Mutasi</span>
 								</a>
 							</li>
@@ -137,12 +132,12 @@
 					<!-- end: Header Menu -->
 					<!-- begin:: Header Topbar -->
 					<div class="kt-header__topbar pt-3" style="display: block;">
-                  <!--begin: User Bar -->
-                  <a href="program/login.html" class="btn btn-secondary btn-logout">
-                     <i class="fa fa-sign-out-alt"></i> Logout
-                  </a>
-                  <!--end: User Bar -->
-               </div>
+						<!--begin: User Bar -->
+						<a href="program/login.html" class="btn btn-secondary btn-logout">
+							<i class="fa fa-sign-out-alt"></i> Logout
+						</a>
+						<!--end: User Bar -->
+					</div>
 					<!-- end:: Header Topbar -->
 				</div>
 				<!-- end:: Header -->
@@ -174,12 +169,12 @@
 										</div>
 									</div>
 									<div class="kt-portlet__body" id="tableRekapWrap">
-                              <div class="kt-input-icon kt-input-icon--left">
-                                 <input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
-                                 <span class="kt-input-icon__icon kt-input-icon__icon--left">
-                                    <span><i class="la la-search"></i></span>
-                                 </span>
-                              </div>
+										<div class="kt-input-icon kt-input-icon--left">
+											<input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
+											<span class="kt-input-icon__icon kt-input-icon__icon--left">
+												<span><i class="la la-search"></i></span>
+											</span>
+										</div>
 										<table class="table table-bordered" id="tbl_lokasi_aset">
 											<thead class="">
 												<tr>
@@ -221,23 +216,19 @@
 									<div class="col">
 										<div class="form-group">
 											<label>Alamat Aset</label>
-											<input id="almatAset" name="almatAset" type="text" class="form-control" aria-describedby="emailHelp" value="Jalan Tun Abdul Razak, Ruko Blok J10" readonly="">
+											<input id="almatAset" name="almatAset" type="text" class="form-control" placeholder="input alamat aset" readonly="">
 										</div>
 										<div class="form-group">
 											<label>Latitude</label>
-											<input id="latitude" name="latitude" type="text" class="form-control" aria-describedby="emailHelp" value="000.0000.000" readonly="">
+											<input id="latitude-point" name="latitude-point" placeholder="_ _ _ _" type="text" class="form-control" value="" readonly="" readonly="">
 										</div>
 										<div class="form-group">
 											<label>Longitude</label>
-											<input id="longitude" name="longitude" type="text" class="form-control" aria-describedby="emailHelp" value="000.000.000" readonly="">
+											<input id="longitude-point" name="longitude-point" placeholder="_ _ _ _" type="text" class="form-control" value="" readonly="" readonly="">
 										</div>
 									</div>
 									<div class="col">
-										<div class="card card-shadow peta-card">
-											<div class="card-body peta-card" style="padding: 0px">
-												<iframe name="alamat-lokasi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.751343368179!2d119.40546796476396!3d-5.143680746267252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1d52ea30d089%3A0x6101a2ac09b61090!2sPantai%20Losari!5e0!3m2!1sid!2sid!4v1583290070545!5m2!1sid!2sid" width="100%" height="300" frameborder="0" style="border:0;border-radius: 10px" allowfullscreen=""></iframe>
-											</div>
-										</div>
+										<div id="googleMap" style="width:100%;height:300px;"></div>
 									</div>
 
 								</div>
@@ -257,17 +248,14 @@
 
 				<!-- begin:: Footer -->
 				<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
-               <div class="kt-container  kt-container--fluid ">
-                  <div class="kt-footer__copyright">
-                     2020&nbsp;&copy;&nbsp;<a href="https://upanastudio.com" target="_blank" class="kt-link">Upana Studio</a>
-                  </div>
-                  <div class="kt-footer__menu">
-                     <!-- <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">About</a>
-                     <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
-                     <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Contact</a> -->
-                  </div>
-               </div>
-            </div>
+					<div class="kt-container  kt-container--fluid ">
+						<div class="kt-footer__copyright">
+							2020&nbsp;&copy;&nbsp;<a href="https://upanastudio.com" target="_blank" class="kt-link">Upana Studio</a>
+						</div>
+						<div class="kt-footer__menu">
+						</div>
+					</div>
+				</div>
 				<!-- end:: Footer -->
 			</div>
 		</div>
@@ -360,9 +348,9 @@
 						data: 'lokasiBarang',
 						title: 'Lokasi Barang',
 						render: function(data, type, full, meta) {
-                     if(data == 'Belum Ditetapkan'){
-                        return `<button class="btn btn-outline-danger" data-toggle="modal" data-target="#modal_lokasi">`+ data +`</button>`;
-                     }
+							if(data == 'Belum Ditetapkan'){
+								return `<button class="btn btn-outline-danger" data-toggle="modal" data-target="#modal_lokasi">`+ data +`</button>`;
+							}
 							return `<button class="btn btn-link" data-toggle="modal" data-target="#modal_lokasi">`+ data +`</button>`;
 						}
 					}],
@@ -390,6 +378,56 @@
 			KTDatatablesSearchOptionsAdvancedSearch.init();
 		});
 	</script>
+	<script>
+		function myMap() {
+			var marker;
+			var mapProp= {
+				center:new google.maps.LatLng(-5.135399,119.423790),
+				zoom:14,
+			};
+			var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			marker = new google.maps.Marker({position: mapProp.center});
+
+			marker.setMap(map);
+
+			google.maps.event.addListener(marker,'click',function() {
+				map.setZoom(16);
+				map.setCenter(marker.getPosition());
+			}); 
+
+			google.maps.event.addListener(map, 'click', function(event) {
+				placeMarker(map, event.latLng);
+
+
+			}); 
+
+			function placeMarker(map, location) {
+				if (marker){
+					marker.setPosition(location);
+				}
+				else {
+					marker = new google.maps.Marker({
+						position: location,
+						map: map
+					});
+
+				}
+				document.getElementById("latitude-point").value = location.lat();
+				document.getElementById("longitude-point").value = location.lng();
+
+				var LAT = location.lat();
+				var LNG = location.lng();
+
+
+			}
+
+
+
+
+		}
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH9juhlGHJLtBCZMmO0Q54DwryFcWNs40&callback=myMap"></script>
 </body>
 <!-- end::Body -->
 </html>
