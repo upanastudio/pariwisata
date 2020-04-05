@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='myApp'>
 <!-- begin::Head -->
 <head>
 	<base href="../">
@@ -22,26 +22,23 @@
 	<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 	<link rel="stylesheet" href="assets/css/style.css">
 	<style>
-		#presentasi {
-			width: 100%;
-			height: 500px;
+		table.dataTable.table-sm > thead > tr > th {
+			padding-right: 20px;
+			padding-left: 20px;
 		}
-		#statistikAset {
-			width: 100%;
-			height: 500px;
+
+		td{
+			text-align: center!important;
 		}
-		th{
-			text-align: center;
+
+		.dataTables_empty{
+			display: none;
 		}
-		#tableRekapWrap th{
-			background-color: #f4f4f4;
-		}
-		
 	</style>
 </head>
 <!-- end::Head -->
 <!-- begin::Body -->
-<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" ng-controller='MyController'>
 	<!-- begin:: Page -->
 	<!-- begin:: Header Mobile -->
 	<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
@@ -128,7 +125,7 @@
 						<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab ">
 							<ul class="kt-menu__nav ">
 								<div class="form-group mt-3">
-									
+
 								</div>
 							</ul>
 
@@ -172,47 +169,75 @@
 									<div class="kt-portlet__head">
 										<div class="kt-portlet__head-label">
 											<h3 class="kt-portlet__head-title">
+												Import Data Excel -> Download Format Excel <a href="#">disini</a>
+											</h3>
+										</div>
+										<div class="kt-portlet__head-toolbar">
+
+										</div>
+									</div>
+									<form enctype="multipart/from-data">
+										<div class="kt-portlet__body ">
+											<div class="row">
+												<div class="col-1 padding-icon-excel">
+													<span class="fa fa-file-excel icon-excel"></span>
+												</div>
+
+												<div class="col-8">
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" id="file">
+														<label class="custom-file-label" for="fileExcel">Pilih File Excel</label>
+													</div>
+												</div>
+												<div class="col-3">
+													<button style="width: 100%;" class="btn btn-primary" type="submit" value="submit" ng-click="uploadExcel()">
+														<i class="fa fa-arrow-circle-up"></i> Unggah Data
+													</button>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="kt-portlet kt-portlet--mobile">
+									<div class="kt-portlet__head">
+										<div class="kt-portlet__head-label">
+											<h3 class="kt-portlet__head-title">
 												Buku Inventaris Gabungan
 											</h3>
 										</div>
 										<div class="kt-portlet__head-toolbar">
-											<a href="sisfor_aset/buku_inventaris_tambah_manual.html" class="btn btn-primary">
-												<i class="fa fa-plus"></i> Tambah Data Aset
-											</a>
+
 										</div>
 									</div>
-									<div class="kt-portlet__body" id="tableRekapWrap">
-										<div class="kt-input-icon kt-input-icon--left">
-											<input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
-											<span class="kt-input-icon__icon kt-input-icon__icon--left">
-												<span><i class="la la-search"></i></span>
-											</span>
-										</div>
-										<table class="table table-bordered" id="tbl_inventaris">
+									<div class="kt-portlet__body">
+										<table class="table table-bordered table-sm" id="myTable" width="100%">
 											<thead class="">
-												<tr>
-													<th colspan="3">Nomor</th>
-													<th colspan="3">Spesifikasi Barang</th>
-													<th rowspan="2">Bahan</th>
-													<th rowspan="2">Asal / Cara Peroleh Barang</th>
-													<th rowspan="2">Tahun Pembelian</th>
-													<th rowspan="2">Ukuran Barang / Konstruksi</th>
-													<th rowspan="2">Satuan</th>
-													<th rowspan="2">Keadaan Barang<br></th>
-													<th colspan="2">Jumlah</th>
-													<th rowspan="2">Keterangan</th>
+												<tr align="center" valign="middle">
+													<th class="th-sm" colspan="3">Nomor</th>
+													<th class="th-sm" colspan="3">Spesifikasi Barang</th>
+													<th class="th-sm" rowspan="2">Bahan</th>
+													<th class="th-sm" rowspan="2">Asal / Cara Peroleh Barang</th>
+													<th class="th-sm" rowspan="2">Tahun Pembelian</th>
+													<th class="th-sm" rowspan="2">Ukuran Barang / Konstruksi</th>
+													<th class="th-sm" rowspan="2">Satuan</th>
+													<th class="th-sm" rowspan="2">Keadaan Barang<br></th>
+													<th class="th-sm" colspan="2">Jumlah</th>
+													<th class="th-sm" rowspan="2">Keterangan</th>
 												</tr>
-												<tr>
-													<th>Urut</th>
-													<th>Kode Barang</th>
-													<th> Register</th>
-													<th>Nama / Jenis Barang</th>
-													<th>Merk / Type</th>
-													<th> No. Sertifikat</th>
-													<th>Barang</th>
-													<th>Harga</th>
+												<tr align="center" valign="middle">
+													<th class="th-sm">Urut</th>
+													<th class="th-sm">Kode Barang</th>
+													<th class="th-sm"> Register</th>
+													<th class="th-sm">Nama / Jenis Barang</th>
+													<th class="th-sm">Merk / Type</th>
+													<th class="th-sm"> No. Sertifikat</th>
+													<th class="th-sm">Barang</th>
+													<th class="th-sm">Harga</th>
 												</tr>
 											</thead>
+											<tbody>
+
+											</tbody>
 										</table>
 									</div>
 								</div>
@@ -228,225 +253,57 @@
 							2020&nbsp;&copy;&nbsp;<a href="https://upanastudio.com" target="_blank" class="kt-link">Upana Studio</a>
 						</div>
 						<div class="kt-footer__menu">
-                     <!-- <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">About</a>
-                     <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
-                     <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Contact</a> -->
-                 </div>
-             </div>
-         </div>
-         <!-- end:: Footer -->
-     </div>
- </div>
-</div>
-<!-- end:: Page -->
+						</div>
+					</div>
+				</div>
+				<!-- end:: Footer -->
+			</div>
+		</div>
+	</div>
+	<!-- end:: Page -->
 
-<!-- end::Quick Panel -->
-<!-- begin::Global Config(global config for global JS sciprts) -->
-<script>
-	var KTAppOptions = {
-		"colors": {
-			"state": {
-				"brand": "#2c77f4",
-				"light": "#ffffff",
-				"dark": "#282a3c",
-				"primary": "#5867dd",
-				"success": "#34bfa3",
-				"info": "#36a3f7",
-				"warning": "#ffb822",
-				"danger": "#fd3995"
-			},
-			"base": {
-				"label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-				"shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+	<!-- end::Quick Panel -->
+	<!-- begin::Global Config(global config for global JS sciprts) -->
+	<script>
+		var KTAppOptions = {
+			"colors": {
+				"state": {
+					"brand": "#2c77f4",
+					"light": "#ffffff",
+					"dark": "#282a3c",
+					"primary": "#5867dd",
+					"success": "#34bfa3",
+					"info": "#36a3f7",
+					"warning": "#ffb822",
+					"danger": "#fd3995"
+				},
+				"base": {
+					"label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+					"shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+				}
 			}
-		}
-	};
-</script>
-<!-- end::Global Config -->
-<!--begin::Global Theme Bundle(used by all pages) -->
-<script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
-<script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
-<script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
-<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-<!-- amchartjs -->
-
-<!-- end: amchartjs -->
-<!-- gmaps -->
-
-<!-- end: gmaps -->
-<script>
-
-	"use strict";
-	var KTDatatablesSearchOptionsAdvancedSearch = function() {
-		$.fn.dataTable.Api.register('column().title()', function() {
-			return $(this.header()).text().trim();
+		};
+	</script>
+	<!-- end::Global Config -->
+	<!--begin::Global Theme Bundle(used by all pages) -->
+	<script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+	<script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
+	<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
+	<script src="assets/js/angular.min.js" type="text/javascript"></script>
+	<script src="assets/js/xlsx.full.min.js" type="text/javascript"></script>
+	<script src="assets/js/previewExcel.js" type="text/javascript"></script>  
+	<script>
+		$(document).ready(function () {
+			$('#myTable').DataTable({
+				responsive: false,
+				scrollX: true,
+				lengthMenu: [5, 10, 25, 50],
+				pageLength: 10,
+				ordering: false,
+			});
+			$('.dataTables_length').addClass('bs-select');
 		});
-
-
-		var tabel_mutasi = function() {
-			var table = $('#tbl_mutasi').DataTable({
-				responsive: false,
-				scrollX: true,
-				dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-				lengthMenu: [5, 10, 25, 50],
-				pageLength: 10,
-				language: {
-					'lengthMenu': 'Display _MENU_',
-				},
-				searchDelay: 500,
-				processing: true,
-				serverSide: false,
-				ajax: {
-					url: 'assets/source/tesing.json',
-					type: 'POST',
-				},
-				search: {
-					input: $('#generalSearch'),
-				},
-				columns: [
-				{
-					data: 'kode',
-					title: 'Kode',
-				},{
-					data: 'namaBarang',
-					title: 'Nama Barang',
-				},{
-					data: 'jumlahKeadaan',
-					title: 'Jumlah',
-				},{
-					data: 'hargaKeadaan',
-					title: 'Harga',
-				},{
-					data: 'jumlahBerkurang',
-					title: 'Jumlah',
-				},{
-					data: 'hargaBerkurang',
-					title: 'Harga',
-				},{
-					data: 'jumlahBertambah',
-					title: 'Jumlah',
-				},{
-					data: 'hargaBertambah',
-					title: 'Harga',
-				},{
-					data: 'jumlahKeadanSetelah',
-					title: 'Jumlah',
-				},{
-					data: 'hargaKeadaanSetelah',
-					title: 'Harga',
-				},{
-					data: 'keterangan',
-					title: 'Keterangan',
-				}],
-				columnDefs: [{
-					targets: [0,1,2,3,4,5,6,7,8,9,10],
-					className: 'text-center',
-				},
-				],
-
-			});
-			$('#kt_form_status').on('change', function() {
-				datatable.search($(this).val().toLowerCase(), 'kategori');
-			});
-
-			$('#kt_form_type').on('change', function() {
-				datatable.search($(this).val().toLowerCase(), 'status');
-			});
-
-			$('#kt_form_status,#kt_form_type').selectpicker();
-
-		};
-		var tabel_inventaris = function() {
-			var table = $('#tbl_inventaris').DataTable({
-				responsive: false,
-				scrollX: true,
-				dom: `<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-				lengthMenu: [5, 10, 25, 50],
-				pageLength: 10,
-				language: {
-					'lengthMenu': 'Display _MENU_',
-				},
-				searchDelay: 500,
-				processing: true,
-				serverSide: false,
-				ajax: {
-					url: 'assets/source/inventaris.json',
-					type: 'POST',
-				},
-				search: {
-					input: $('#generalSearch'),
-				},
-				columns: [
-				{
-					data: 'urut',
-					title: 'Urut',
-				},{
-					data: 'kodeBarang',
-					title: 'Kode Barang',
-				},{
-					data: 'register',
-					title: 'Register',
-				},{
-					data: 'namaBarang',
-					title: 'Nama / Jenis Barang',
-				},{
-					data: 'merk',
-					title: 'Merk / Type',
-				},{
-					data: 'noSertifikat',
-					title: 'No. Sertifikat',
-				},{
-					data: 'bahan',
-					title: 'Bahan',
-				},{
-					data: 'asal',
-					title: 'Asal / Cara Perolehan Barang',
-				},{
-					data: 'tahunPembelian',
-					title: 'Tahun Pembelian',
-				},{
-					data: 'ukuranBarang',
-					title: 'Ukuran Barang',
-				},{
-					data: 'satuanBarang',
-					title: 'Satuan Barang',
-				},{
-					data: 'keadaanBarang',
-					title: 'Keadaan Barang',
-				},{
-					data: 'jumlahBarang',
-					title: 'Jumlah',
-				},{
-					data: 'hargaBarang',
-					title: 'Harga',
-				},{
-					data: 'keterangan',
-					title: 'Keterangan',
-				}],
-				columnDefs: [{
-					targets: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-					className: 'text-center',
-				},
-				],
-
-			});
-			$('#generalSearch').on('keyup', function() {
-				table.search(this.value).draw();
-			});
-
-
-		};
-		return {
-			init: function() {
-				tabel_mutasi ();
-				tabel_inventaris ();
-			},
-		};
-	}();
-	jQuery(document).ready(function() {
-		KTDatatablesSearchOptionsAdvancedSearch.init();
-	});
-</script>
+	</script>
 </body>
 <!-- end::Body -->
 </html>
