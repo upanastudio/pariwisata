@@ -6,6 +6,7 @@
     "aaData": [{
         "urut": "162",
         "unit": 1,
+        "idData": 1,
         "lokasiBarang": "Belum Ditetapkan",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
@@ -24,6 +25,7 @@
     },{
         "urut": "162",
         "unit": 1,
+        "idData": 2,
         "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
@@ -42,6 +44,7 @@
     },{
         "urut": "162",
         "unit": 1,
+        "idData": 3,
         "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
@@ -60,6 +63,7 @@
     },{
         "urut": "162",
         "unit": 1,
+        "idData": 4,
         "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
@@ -78,6 +82,7 @@
     },{
        "urut": "162",
        "unit": 1,
+       "idData": 5,
        "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
@@ -96,6 +101,7 @@
     },{
         "urut": "162",
         "unit": 1,
+        "idData": 6,
         "lokasiBarang": "Lokasi: -6.19885, 106.8027",
         "kodeBarang": "02.06.02.01.066",
         "register": "0013",
