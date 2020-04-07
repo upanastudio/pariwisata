@@ -311,21 +311,19 @@
                                        <div class="form-group row">
                                           <label for="latitude" class="col-2 col-form-label">Latitude</label>
                                           <div class="col-10">
-                                             <input class="form-control" type="text" placeholder="input latitude" id="latitude" name="latitude">
+                                             <input class="form-control" type="text" placeholder="input latitude" id="latitude-point" name="latitude">
                                           </div>
                                        </div>
                                        <div class="form-group row">
                                           <label for="longitude" class="col-2 col-form-label">Longitude</label>
                                           <div class="col-10">
-                                             <input class="form-control" type="text" placeholder="input longitude" id="longitude" name="longitude">
+                                             <input class="form-control" type="text" placeholder="input longitude" id="longitude-point" name="longitude">
                                           </div>
                                        </div>
                                        <div class="form-group row">
                                           <label for="" class="col-12 col-form-label">Pin Point</label>
                                           <div class="col-12">
-                                             <div id="peta">
-                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.8126106199684!2d119.4031027143706!3d-5.133857753368861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf02b011ce37ef%3A0x28ed3928c1b6cf23!2sBenteng%20Rotterdam%20Makassar!5e0!3m2!1sid!2sid!4v1583051220918!5m2!1sid!2sid" frameborder="0" style="border:0;border-radius: 10px" allowfullscreen=""></iframe>
-                                             </div>
+                                             <div id="googleMap" style="width:100%;height:300px;border-radius: 10px;"></div>
                                           </div>
                                        </div>
                                     </section>
@@ -609,7 +607,57 @@
          jQuery(document).ready(function() {
             KTSelect2.init();
          });
-      </script>	
+      </script>
+      <script>
+         function myMap() {
+            var marker;
+            var mapProp= {
+               center:new google.maps.LatLng(-5.135399,119.423790),
+               zoom:14,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            marker = new google.maps.Marker({position: mapProp.center});
+   
+            marker.setMap(map);
+   
+            google.maps.event.addListener(marker,'click',function() {
+               map.setZoom(16);
+               map.setCenter(marker.getPosition());
+            }); 
+   
+            google.maps.event.addListener(map, 'click', function(event) {
+               placeMarker(map, event.latLng);
+   
+   
+            }); 
+   
+            function placeMarker(map, location) {
+               if (marker){
+                  marker.setPosition(location);
+               }
+               else {
+                  marker = new google.maps.Marker({
+                     position: location,
+                     map: map
+                  });
+   
+               }
+               document.getElementById("latitude-point").value = location.lat();
+               document.getElementById("longitude-point").value = location.lng();
+   
+               var LAT = location.lat();
+               var LNG = location.lng();
+   
+   
+            }
+   
+   
+   
+   
+         }
+      </script>
+   
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH9juhlGHJLtBCZMmO0Q54DwryFcWNs40&callback=myMap"></script>	
 		<!--end::Page Scripts -->
 	</body>
 	<!-- end::Body -->
