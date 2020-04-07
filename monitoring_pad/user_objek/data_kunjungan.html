@@ -185,21 +185,24 @@
 												<table class="table table-bordered" id="TblKunjungan">
 													<thead>
 														<tr>
-															<th rowspan="2">No</th>
-															<th rowspan="2">Tanggal</th>
-															<th rowspan="2">Mancanegara<br></th>
-															<th rowspan="2">Lokal</th>
-															<th rowspan="2">Total<br></th>
-															<th colspan="2">Tiket Dewasa</th>
-															<th colspan="2">Tiket Anak</th>
-															<th rowspan="2">Total Resu</th>
-														</tr>
-														<tr>
-															<th>No. Seri</th>
-															<th>Lembar</th>
-															<th>No. Seri</th>
-															<th>Lembar</th>
-														</tr>
+                                             <th rowspan="2">No</th>
+                                             <th rowspan="2">Tanggal</th>
+                                             <th colspan="2">Kunjungan Tanpa Tiket</th>
+                                             <th colspan="2">Tiket Dewasa</th>
+                                             <th colspan="2">Tiket Anak</th>
+                                             <th colspan="2">Mancanegara</th>
+                                             <th rowspan="2">Total Resu</th>
+                                           </tr>
+                                           <tr>
+                                             <th>Mancanegara</th>
+                                             <th>Lokal</th>
+                                             <th>No. Seri</th>
+                                             <th>Lembar</th>
+                                             <th>No. Seri</th>
+                                             <th>Lembar</th>
+                                             <th>No.Seri</th>
+                                             <th>Lembar</th>
+                                           </tr>
 													</thead>
 												</table>
 											</div>
@@ -299,31 +302,44 @@
 											<div class="input-group-append"><span class="input-group-text" id="basic-addon2">Lembar</span></div>
 										</div>
 									</div>
-								</div>
+                        </div>
+                        <div class="kt-separator kt-separator--border-dashed"></div>
+								<div class="form-group row">
+									<label for="noSeriTiketAnak" class="col-4 col-form-label">No. Seri Tiket</label>
+									<div class="col-3">
+										<input id="noSeriTiketAnakAwal" name="noSeriTiketAnakAwal" type="text" class="form-control" placeholder="input seri">
+									</div>
+									<div class="col-2 text-center pt-2">
+										<p>S/D</p>
+									</div>
+									<div class="col-3">
+										<input id="noSeriTiketAnakAkhir" name="noSeriTiketAnakAkhir" type="text" class="form-control" placeholder="input seri">
+									</div>
+                        </div>
+                        <div class="form-group row">
+									<label for="jumTiketMancanegara" class="col-4 col-form-label">Tiket Mancanegara</label>
+									<div class="col-8">
+										<div class="input-group">
+											<input min=0 id="jumTiketMancanegara" name="jumTiketMancanegara" type="number" class="form-control" placeholder="input jumlah">
+											<div class="input-group-append"><span class="input-group-text" id="basic-addon2">Lembar</span></div>
+										</div>
+									</div>
+                        </div>
 								<h5 class="mt-5">Penyewaan</h5>
 								<hr>
 								<div class="form-group row">
-									<label for="resuA" class="col-4 col-form-label">Resu A</label>
+									<label for="nilaiResu" class="col-4 col-form-label">Nilai Resu</label>
 									<div class="col-8">
 										<div class="input-group">
 											<div class="input-group-append"><span class="input-group-text" id="basic-addon2">Rp</span></div>
-											<input min=0 id="resuA" name="resuA" type="text" class="form-control uang" placeholder="input jumlah">
-										</div>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="resuB" class="col-4 col-form-label">Resu B</label>
-									<div class="col-8">
-										<div class="input-group">
-											<div class="input-group-append"><span class="input-group-text" id="basic-addon2">Rp</span></div>
-											<input min=0 id="resuB" name="resuB" type="text" class="form-control uang" placeholder="input jumlah">
+											<input min=0 id="nilaiResu" name="nilaiResu" type="text" class="form-control uang" placeholder="input jumlah">
 										</div>
 									</div>
 								</div>
 							</div>
 
 							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 								<button type="button" class="btn btn-success btn_save">Simpan</button>
 							</div>
 						</div>
@@ -426,9 +442,6 @@
                   }, {
                   	data: 'lokal',
                   	title: 'Lokal',
-                  }, {
-                  	data: 'total',
-                  	title: 'Total',
                   },{
                   	data: 'tdNoSeri',
                   	title: 'No. Seri',
@@ -442,11 +455,17 @@
                   	data: 'taLembar',
                   	title: 'Lembar',
                   },{
+                  	data: 'mancaNoSeri',
+                  	title: 'No. Seri',
+                  },{
+                  	data: 'mancaLembar',
+                  	title: 'Lembar',
+                  },{
                   	data: 'totalResu',
                   	title: 'Total Resu',
                   }],
                   columnDefs: [{
-                  	targets: [0, 1, 2, 3, 4,5 ,6, 7, 8, 9],
+                  	targets: [0, 1, 2, 3, 4,5 ,6, 7, 8, 9, 10],
                   	className: 'text-center',
                   	orderable: true,
                   }],
