@@ -145,7 +145,7 @@
                               </div>
                            </div>
                            <div class="kt-portlet__body">
-                              <table class="tg" style="width: 100%">
+                              <table class="tg d-none" style="width: 100%">
                                  <tr>
                                     <th class="tg-cly1">#</th>
                                     <th class="tg-cly1">Kode Rekening</th>
@@ -158,77 +158,80 @@
                                     <th class="tg-cly1">Status<br></th>
                                     <th class="tg-cly1">Aksi</th>
                                  </tr>
-                                 <tr>
-                                    <td class="tg-0lax toogle-child">
-                                       <span class="fa fa-plus-circle"></span>
-                                    </td>
-                                    <td class="tg-0lax kode-rekening">
-                                       1.02.18.1.02.16.01.00.00.000.5
-                                    </td>
-                                    <td class="tg-bold uraian">
-                                       BELANJA DAERAH
-                                    </td>
-                                    <td class="tg-bold bidang">
-                                       - Bidang Pengembangan Sumber Daya Pariwisata <br>
-                                       - BBidang Pemasaran
-                                    </td>
-                                    <td class="tg-bold anggaran-program">
-                                       55.366.882.80
-                                    </td>
-                                    <td class="tg-bold realisasi-anggaran">
-                                       586.552.882.00
-                                    </td>
-                                    <td class="tg-bold sisa-pagu">
-                                       54.769.813.215.80
-                                    </td>
-                                    <td class="tg-bold persentase">
-                                       1.06%
-                                    </td>
-                                    <td class="tg-0lax status">
-                                       <span style="width:100%" class="btn btn-bold btn-sm btn-font-sm btn-label-danger">Belum</span>
-                                    </td>
-                                    <td class="tg-0lax aksi">
-                                       <a href="program/user_program/tahun_anggaran_kelola_realisasi.html" class="btn btn-primary">
-                                          Realisasi
-                                       </a>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="tg-0lax toogle-child">
-                                       <span class="fa fa-plus-circle"></span>
-                                    </td>
-                                    <td class="tg-0lax kode-rekening">
-                                       1.02.18.1.02.16.01.00.00.000.5
-                                    </td>
-                                    <td class="tg-bold uraian">
-                                       BELANJA DAERAH
-                                    </td>
-                                    <td class="tg-bold bidang">
-                                       - Bidang Pengembangan Sumber Daya Pariwisata <br>
-                                       - BBidang Pemasaran
-                                    </td>
-                                    <td class="tg-bold anggaran-program">
-                                       55.366.882.80
-                                    </td>
-                                    <td class="tg-bold realisasi-anggaran">
-                                       586.552.882.00
-                                    </td>
-                                    <td class="tg-bold sisa-pagu">
-                                       54.769.813.215.80
-                                    </td>
-                                    <td class="tg-bold persentase">
-                                       1.06%
-                                    </td>
-                                    <td class="tg-0lax status">
-                                       <span style="width:100%" class="btn btn-bold btn-sm btn-font-sm btn-label-danger">Belum</span>
-                                    </td>
-                                    <td class="tg-0lax aksi">
-                                       <a href="program/user_program/tahun_anggaran_kelola_realisasi.html" class="btn btn-primary">
-                                          Realisasi
-                                       </a>
-                                    </td>
-                                 </tr>
+                                 <div id="data-list">
+                                    <tr class="item-list" data-id="1">
+                                       <td class="tg-0lax toogle-child">
+                                          <span id="1" data-counter="1" class="fa fa-plus-circle btn-toogle-data"></span>
+                                       </td>
+                                       <td class="tg-0lax kode-rekening">
+                                          1.02.18.1.02.16.01.00.00.000.5
+                                       </td>
+                                       <td class="tg-bold uraian">
+                                          BELANJA DAERAH
+                                       </td>
+                                       <td class="tg-bold bidang">
+                                          - Bidang Pengembangan Sumber Daya Pariwisata <br>
+                                          - BBidang Pemasaran
+                                       </td>
+                                       <td class="tg-bold anggaran-program">
+                                          55.366.882.80
+                                       </td>
+                                       <td class="tg-bold realisasi-anggaran">
+                                          586.552.882.00
+                                       </td>
+                                       <td class="tg-bold sisa-pagu">
+                                          54.769.813.215.80
+                                       </td>
+                                       <td class="tg-bold persentase">
+                                          1.06%
+                                       </td>
+                                       <td class="tg-0lax status">
+                                          <span style="width:100%" class="btn btn-bold btn-sm btn-font-sm btn-label-danger">Belum</span>
+                                       </td>
+                                       <td class="tg-0lax aksi">
+                                          <a href="program/user_program/tahun_anggaran_kelola_realisasi.html" class="btn btn-primary">
+                                             Realisasi
+                                          </a>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="tg-0lax toogle-child">
+                                          <span id="2" data-counter="2" class="fa fa-plus-circle btn-toogle-data"></span>
+                                       </td>
+                                       <td class="tg-0lax kode-rekening">
+                                          1.02.18.1.02.16.01.00.00.000.5
+                                       </td>
+                                       <td class="tg-bold uraian">
+                                          BELANJA DAERAH
+                                       </td>
+                                       <td class="tg-bold bidang">
+                                          - Bidang Pengembangan Sumber Daya Pariwisata <br>
+                                          - BBidang Pemasaran
+                                       </td>
+                                       <td class="tg-bold anggaran-program">
+                                          55.366.882.80
+                                       </td>
+                                       <td class="tg-bold realisasi-anggaran">
+                                          586.552.882.00
+                                       </td>
+                                       <td class="tg-bold sisa-pagu">
+                                          54.769.813.215.80
+                                       </td>
+                                       <td class="tg-bold persentase">
+                                          1.06%
+                                       </td>
+                                       <td class="tg-0lax status">
+                                          <span style="width:100%" class="btn btn-bold btn-sm btn-font-sm btn-label-danger">Belum</span>
+                                       </td>
+                                       <td class="tg-0lax aksi">
+                                          <a href="program/user_program/tahun_anggaran_kelola_realisasi.html" class="btn btn-primary">
+                                             Realisasi
+                                          </a>
+                                       </td>
+                                    </tr>
+                                 </div>
                               </table>
+                              <table class="table table-bordered table-hover table-checkable" id="childrow_contoh"></table>
                            </div>
                         </div>
                      </div>
@@ -292,7 +295,7 @@
          var iniTblChildRow = function() {
             function format ( d, tds ) {
                var trs='';
-               $.each($(d.no_child),function(key,value){
+               $.each($(d.kodeRek_child),function(key,value){
                   var validasi = `
                   <div class="kt-checkbox-list">
                   <label class="kt-checkbox kt-checkbox--bold kt-checkbox--success validasi_check">
@@ -321,7 +324,7 @@
 
                   var aksi = '<a href="'+status[d.status_child[key]].href+'" class="btn btn-sm btn-primary" style="color:white;border-radius:20px">Rincian</a>';
                   trs+='<tr><td style="width:30px"></td><td>'+value+
-                  '</td><td>'+d.pekerjaan_child[key]+
+                  '</td><td>'+d.uraian_child[key]+
                   '</td><td>'+d.vendor_child[key]+
                   '</td><td>'+d.sifat_child[key]+
                   '</td><td>'+d.tanggal_child[key]+
@@ -345,14 +348,13 @@
                   title : '#',
                   defaultContent: '',
                   width: 20
-               },
-               {
-                  data: 'no',
-                  orderable:      false,
-                  title: 'No.',
                },{
-                  data: 'pekerjaan',
-                  title: 'Pekerjaan',
+                  data: 'kodeRekening',
+                  title: 'Kode Rekening',
+                  width: 150
+               },{
+                  data: 'uraian',
+                  title: 'Uraian',
                },{
                   data: 'vendor',
                   title: 'Vendor',
@@ -496,6 +498,12 @@ return {
 jQuery(document).ready(function () {
    KTDatatablesSearchOptionsAdvancedSearch.init();
 });
+</script>
+<script>
+   $(document).on('click', '.btn-toogle-data', function() {
+      let counter = $(this).data('counter');
+      alert(counter);
+   });
 </script>
 <!--end::Page Scripts -->
 </body>

@@ -1,7 +1,8 @@
 {
 	"data": [{
 		"no" : 1,
-		"pekerjaan" : "penggalian",
+		"kodeRekening" : "1.02.16.1.02.16.01.00.01",
+		"uraian" : "PROGRAM PENGELOLAAN KEKAYAAN DAN KERAGAMAN BUDAYA",
 		"jenis_sika" : "Izin Penggunaan Listrik dalam vessel",
 		"vendor" : "CV. Upana",
 		"no_sika": "01/23/12345123",
@@ -12,11 +13,11 @@
 		"status" : "pengajuan awal",
 		"aksi" : null,
 		"rincian" : null,
-		"no_child": [
-			"1.a", "1.b"
+		"kodeRek_child": [
+			"1.02.16.1.02.16.01.00.01.007", "1.02.16.1.02.16.01.00.01.008"
 		],
-		"pekerjaan_child": [
-			"Penggalian", "Penggalian"
+		"uraian_child": [
+			"Pertunjukan Seni dalam Daerah", "Belanja Dokumentasi"
 		],
 		"vendor_child": [
 			"CV. Upana", "CV.Upana"

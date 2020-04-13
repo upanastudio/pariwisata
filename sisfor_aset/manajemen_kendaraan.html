@@ -86,8 +86,8 @@
 							</li>
 							<li class="kt-menu__item  " aria-haspopup="true">
 								<a href="sisfor_aset/rekap_mutasi.html" class="kt-menu__link ">
-								<!-- 	<object type="image/svg+xml" data="assets/media/misc/move.svg" class="kt-menu__link-icon icon icon-speed" width="50%"></object> -->
-								<span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-copy"></i></span>
+									<!-- 	<object type="image/svg+xml" data="assets/media/misc/move.svg" class="kt-menu__link-icon icon icon-speed" width="50%"></object> -->
+									<span class="kt-menu__link-icon icon icon-aset"><i class="fa fa-copy"></i></span>
 									<span class="kt-menu__link-text text-center">Rekap Mutasi</span>
 								</a>
 							</li>
@@ -136,12 +136,12 @@
 					<!-- end: Header Menu -->
 					<!-- begin:: Header Topbar -->
 					<div class="kt-header__topbar pt-3" style="display: block;">
-                  <!--begin: User Bar -->
-                  <a href="program/login.html" class="btn btn-secondary btn-logout">
-                     <i class="fa fa-sign-out-alt"></i> Logout
-                  </a>
-                  <!--end: User Bar -->
-               </div>
+						<!--begin: User Bar -->
+						<a href="program/login.html" class="btn btn-secondary btn-logout">
+							<i class="fa fa-sign-out-alt"></i> Logout
+						</a>
+						<!--end: User Bar -->
+					</div>
 					<!-- end:: Header Topbar -->
 				</div>
 				<!-- end:: Header -->
@@ -181,12 +181,12 @@
 										</div>
 									</div>
 									<div class="kt-portlet__body" id="tableRekapWrap">
-                              <div class="kt-input-icon kt-input-icon--left">
-                                 <input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
-                                 <span class="kt-input-icon__icon kt-input-icon__icon--left">
-                                    <span><i class="la la-search"></i></span>
-                                 </span>
-                              </div>
+										<div class="kt-input-icon kt-input-icon--left">
+											<input type="text" class="form-control" placeholder="Cari..." id="generalSearch">
+											<span class="kt-input-icon__icon kt-input-icon__icon--left">
+												<span><i class="la la-search"></i></span>
+											</span>
+										</div>
 										<table class="table table-bordered table-hover table-checkable" id="tblManajemenKendaraan">
 										</table>
 									</div>
@@ -196,19 +196,43 @@
 					</div>
 					<!-- end:: Content -->
 				</div>
+				<!-- Modal -->
+				<div class="modal fade" data-backdrop="static" id="modal_tanggal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLongTitle">
+									<i class="fa fa-map-marker-alt mr-1"></i> Jatuh Tempo Pajak
+								</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class id="tanggalJatuhTempo" ></div>
+								<input name="id-modal" id="id-modal" type="hidden">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">
+									<i class="fa fa-times"></i> Batal
+								</button>
+								<button id="btn_simpanTanggal" type="button" class="btn btn-primary">
+									<i class="fa fa-save"></i> Simpan
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End: Modal -->
 				<!-- begin:: Footer -->
 				<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
-               <div class="kt-container  kt-container--fluid ">
-                  <div class="kt-footer__copyright">
-                     2020&nbsp;&copy;&nbsp;<a href="https://upanastudio.com" target="_blank" class="kt-link">Upana Studio</a>
-                  </div>
-                  <div class="kt-footer__menu">
-                     <!-- <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">About</a>
-                     <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
-                     <a href="http://keenthemes.com/metronic" target="_blank" class="kt-footer__menu-link kt-link">Contact</a> -->
-                  </div>
-               </div>
-            </div>
+					<div class="kt-container  kt-container--fluid ">
+						<div class="kt-footer__copyright">
+							2020&nbsp;&copy;&nbsp;<a href="https://upanastudio.com" target="_blank" class="kt-link">Upana Studio</a>
+						</div>
+						<div class="kt-footer__menu">
+						</div>
+					</div>
+				</div>
 				<!-- end:: Footer -->
 			</div>
 		</div>
@@ -244,7 +268,7 @@
 	<script src="assets/js/pages/dashboard.js" type="text/javascript"></script>
 	<script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
 	<!-- amchartjs -->
-	
+
 	<!-- end: amchartjs -->
 	<!-- gmaps -->
 
@@ -255,7 +279,7 @@
 			$.fn.dataTable.Api.register('column().title()', function() {
 				return $(this.header()).text().trim();
 			});
-			
+
 			var initTableActivities = function() {
 				var table = $('#tblManajemenKendaraan').DataTable({
 					order: [],
@@ -299,10 +323,17 @@
 			            	title: 'Penanggung Jawab',
 			            },{
 			            	data: 'tglJatuhTempo',
-                        title: 'Jatuh Tempo Pajak',
-                        width: 150,
-                        render: function(data, type, row, meta) {
-			            		return '<input class="form-control inputJatuhTempo" placeholder="Belum Ditetapkan" type="text" value="'+data+'" id="tglJatuhTempo" name="tglJatuhTempo">'
+			            	title: 'Jatuh Tempo Pajak',
+			            	width: 150,
+			            	render: function(data, type, full, meta) {
+			            		// return '<input class="form-control inputJatuhTempo" placeholder="Belum Ditetapkan" type="text" value="'+data+'" id="tglJatuhTempo" name="tglJatuhTempo">'
+			            		if (data == "Belum Ditetapkan") {
+			            			return `<button data-id="${full.idData}" class="btn btn-label-danger" data-toggle="modal" data-target="#modal_tanggal">${data}
+			            			</button>`
+			            		}
+			            		else {
+			            			return `<p>${data}</p>`
+			            		}
 			            	},
 			            },{
 			            	data: 'sisaHari',
@@ -323,9 +354,18 @@
 			            	},
 			            },{
 			            	data: 'aksi',
-                        title: 'aksi',
-                        render: function(data, type, row, meta) {
-			            		return '<button class="btn btn-info">Aksi</button>'
+			            	title: 'aksi',
+			            	render: function(data, type, full, meta) {
+			            		if (full.status == "selesai") {
+			            			return `<button class="btn btn-secondary" disable="">
+			            			Bayar
+			            			</button>`
+			            		}
+			            		else{
+			            			return `<button class="btn btn-success">
+			            			Bayar
+			            			</button>`
+			            		}
 			            	},
 			            },],
 			            columnDefs: [{
@@ -344,33 +384,103 @@
 				}).draw();
 				$('#generalSearch').on('keyup', function() {
 					table.search(this.value).draw();
-            });
+				});
 
-            $('#tblManajemenKendaraan').on('focus', '.inputJatuhTempo', function(){
-               $(".inputJatuhTempo").attr("type","Date");
-            });
-            $('#tblManajemenKendaraan').on('blur', '.inputJatuhTempo', function(){
-               $(".inputJatuhTempo").attr("type","Text");
-            });
-           
-
-            
+				$('#tblManajemenKendaraan').on('focus', '.inputJatuhTempo', function(){
+					$(".inputJatuhTempo").attr("type","Date");
+				});
+				$('#tblManajemenKendaraan').on('blur', '.inputJatuhTempo', function(){
+					$(".inputJatuhTempo").attr("type","Text");
+				});
 			};
 
-			
 			return {
 				init: function() {
 					initTableActivities ();
 				},
 			};
 		}();
+
+
+		var panggilModal = function () {
+			$("#modal_tanggal").on('shown.bs.modal', function (e) {
+				let id = $(e.relatedTarget).data('id');
+				$("#id-modal").val(id);
+				console.log("ID : " + id);
+			});
+		}();
+
 		jQuery(document).ready(function() {
 			KTDatatablesSearchOptionsAdvancedSearch.init();
+			panggilModal;
 		});
-   </script>
-   <script>
-    
-   </script>
-</body>
-<!-- end::Body -->
-</html>
+	</script>
+	<script>
+		var KTBootstrapDatepicker = function () {
+
+			var arrows;
+			if (KTUtil.isRTL()) {
+				arrows = {
+					leftArrow: '<i class="la la-angle-right"></i>',
+					rightArrow: '<i class="la la-angle-left"></i>'
+				}
+			} else {
+				arrows = {
+					leftArrow: '<i class="la la-angle-left"></i>',
+					rightArrow: '<i class="la la-angle-right"></i>'
+				}
+			}
+
+			var demos = function () {
+				$('.datepicker_mode').datepicker({
+					rtl: KTUtil.isRTL(),
+					todayHighlight: true,
+					orientation: "bottom left",
+					templates: arrows,
+					dateFormat: 'dd-mm-yy'
+				});
+
+				 // inline picker
+				 $('#tanggalJatuhTempo').datepicker({
+				 	rtl: KTUtil.isRTL(),
+				 	todayHighlight: true,
+				 	templates: arrows,
+				 	dateFormat: 'dd-mm-yy'
+				 });
+				}
+
+				return {
+					init: function() {
+						demos(); 
+					}
+				};
+			}();
+
+			jQuery(document).ready(function() {    
+				KTBootstrapDatepicker.init();
+			});
+		</script>
+		<script>
+			$("#btn_simpanTanggal").on('click',function(){
+				var kalender = $('#tanggalJatuhTempo').val();
+				var id = $('#id_modal').val();
+				$.ajax({
+					type:"POST",
+					cache:false,
+					url:"http://localhost/aset_fe/assets/source/true.json",
+					data:{kalender : kalender, id : id},
+					success: function (html) {
+				    	location.reload();
+				    }
+				});
+			})
+
+
+
+			function simpanTanggal(){
+				
+			}
+		</script>
+	</body>
+	<!-- end::Body -->
+	</html>
