@@ -1,0 +1,44 @@
+{
+	"data": [{
+		"no" : 1,
+		"pekerjaan" : "penggalian",
+		"jenis_sika" : "Izin Penggunaan Listrik dalam vessel",
+		"vendor" : "CV. Upana",
+		"no_sika": "01/23/12345123",
+		"tanggal" : "10 November 2019",
+		"sifat" : "Swakelola",
+		"tipe" : "hot",
+		"validasi" : null,
+		"status" : "pengajuan awal",
+		"aksi" : null,
+		"rincian" : null,
+		"no_child": [
+			"1.a", "1.b"
+		],
+		"pekerjaan_child": [
+			"Penggalian", "Penggalian"
+		],
+		"vendor_child": [
+			"CV. Upana", "CV.Upana"
+		],
+		"sifat_child": [
+			"Swakelola", "Swakelola"
+		],
+		"tipe_child": [
+			"Hot", "Hot"
+		],
+		"tanggal_child": [
+			"20 November 2019", "12 November 2019"
+		],
+		"validasi_child": [
+			null, null
+		],
+		"status_child": [
+			"selesai", "ditolak"
+		],
+		"aksi_child": [
+			null, null
+		]
+
+	}]
+}

@@ -365,11 +365,13 @@
                      data: 'lokasiBarang',
                      title: 'Lokasi Barang',
                      render: function (data, type, full, meta) {
+                        console.log(full);
                         if (data == 'Belum Ditetapkan') {
                            return `<button data-id="${full.idData}" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal_lokasi">${data}</button>`;
                         }
                         return `<button data-id="${full.idData}" class="btn btn-link" data-toggle="modal" data-target="#modal_lokasi">${data}</button>`;
                      }
+                     
                   }],
                columnDefs: [{
                   targets: [0, 1, 2, 3, 4, 5, 6],
@@ -396,7 +398,7 @@
          $("#modal_lokasi").on('shown.bs.modal', function (e) {
             let id = $(e.relatedTarget).data('id');
             $("#id-aset").val(id);
-            console.log(id);
+            console.log("ID : " + id);
          });
       }();
 

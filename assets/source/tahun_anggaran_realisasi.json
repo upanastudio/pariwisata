@@ -1,0 +1,27 @@
+{
+   "iTotalRecords": 10,
+  "iTotalDisplayRecords": 10,
+  "sEcho": 0,
+  "sColumns": "",
+  "aaData": [{
+          "tahun": 2019,
+          "penggunaAnggaran": "Ir. H. DENNY IRAWAN SAARDI., M.Si",
+          "status": null,
+          "aksi": null
+      },
+      {
+         "tahun": 2020,
+         "penggunaAnggaran": "Ir. H. AHMAD RIFALDI., M.Si",
+         "status": null,
+         "aksi": null
+         
+      },
+      {
+         "tahun": 2021,
+         "penggunaAnggaran": "Ir. H. FASCAL IVANDRY., M.Si",
+         "status": null,
+         "aksi": null
+         
+      }
+  ]
+}

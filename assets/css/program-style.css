@@ -1,3 +1,6 @@
+body{
+   color: #0B1C2C;
+}
 .kt-aside-menu,
 #kt_aside_menu_wrapper {
    background-color: #0b1c2c;
@@ -145,6 +148,116 @@
 .namaBidang {
    line-height: 1.5;
 }
+
+
+.highcharts-figure,
+.highcharts-data-table table {
+   min-width: 310px;
+   padding: 0px 0px;
+}
+
+#container-statistik {
+   height: 400px;
+   width: 100%;
+}
+
+.highcharts-data-table table {
+   font-family: Verdana, sans-serif;
+   border-collapse: collapse;
+   border: 1px solid #EBEBEB;
+   margin: 10px auto;
+   text-align: center;
+   width: 100%;
+   max-width: 500px;
+}
+
+.highcharts-data-table caption {
+   padding: 1em 0;
+   font-size: 1.2em;
+   color: #555;
+}
+
+.highcharts-data-table th {
+   font-weight: 600;
+   padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+   padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+   background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+   background: #f1f7ff;
+}
+
+.item-select,
+.item-selectKegiatan{
+   border-bottom: 1px solid #efefef;
+   margin-top: 1rem;
+}
+.item-select p,
+.item-selectKegiatan p{
+   font-size: 1rem;
+}
+
+.item-select .fa-times:hover,
+.item-selectKegiatan .fa-times:hover{
+   color: salmon;
+   font-size: 1.1rem;
+}
+
+#hasil-selectKegiatan{
+   margin-top:-15px
+}
+
+.bold-text
+{
+   font-weight: 600;
+}
+
+.listBidang p{
+   line-height: 1;
+}
+
+.btn-verif-status{
+   width: 200px
+}
+
+#modal_simpan .dalam-progress{
+   color: #5578EB;
+}
+
+#modal_simpan .selesai{
+   color: #1DC9B7;
+}
+
+td.details-control {
+   background: url('https://raw.githubusercontent.com/DataTables/DataTables/1.10.7/examples/resources/details_open.png') no-repeat center center;
+   cursor: pointer;
+}
+tr.shown td.details-control {
+   background: url('https://raw.githubusercontent.com/DataTables/DataTables/1.10.7/examples/resources/details_close.png') no-repeat center center;
+}
+
+
+
+/*Tabel Program dan Realisasi Tahun Anggaran*/
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:11px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:13px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-cly1{font-weight: bold;text-align: center;vertical-align:middle}
+.tg .tg-0lax{text-align:center;vertical-align:middle}
+.tg .tg-bold{font-weight:bold;text-align:center;vertical-align:middle}
+/*Akhir Tabel Program dan Realisasi Tahun Anggaran*/
+
+
 
 /*Responsive*/
 @media(max-width: 1024px) {
