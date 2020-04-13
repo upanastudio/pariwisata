@@ -356,7 +356,11 @@
 			            	data: 'aksi',
 			            	title: 'Aksi',
 			            	render: function(data, type, full, meta) {
-			            		
+			            		if (full.status == "selesai") {
+			            			return `<button data-id="${full.idData}" class="btn btn-secondary btn_bayar" disabled="">
+			            			Bayar
+			            			</button>`
+			            		}
 			            			return `<button data-id="${full.idData}" class="btn btn-success btn_bayar">
 			            			Bayar
 			            			</button>`
