@@ -354,18 +354,13 @@
 			            	},
 			            },{
 			            	data: 'aksi',
-			            	title: 'aksi',
+			            	title: 'Aksi',
 			            	render: function(data, type, full, meta) {
-			            		if (full.status == "selesai") {
-			            			return `<button class="btn btn-secondary" disable="">
+			            		
+			            			return `<button data-id="${full.idData}" class="btn btn-success btn_bayar">
 			            			Bayar
 			            			</button>`
-			            		}
-			            		else{
-			            			return `<button class="btn btn-success">
-			            			Bayar
-			            			</button>`
-			            		}
+			            		
 			            	},
 			            },],
 			            columnDefs: [{
@@ -463,7 +458,7 @@
 		<script>
 			$("#btn_simpanTanggal").on('click',function(){
 				var kalender = $('#tanggalJatuhTempo').val();
-				var id = $('#id_modal').val();
+				var id = $('#id-modal').val();
 				$.ajax({
 					type:"POST",
 					cache:false,
@@ -476,10 +471,19 @@
 			})
 
 
-
-			function simpanTanggal(){
+			$(document).on('click','.btn_bayar', function(e){
 				
-			}
+				var id = $(this).data('id');
+				
+				$.ajax({
+					type:"POST",
+					url:"http://localhost/aset_fe/assets/source/true.json",
+					data:id,
+					success: function (html) {
+						console.log(id);
+					}
+				})
+			})
 		</script>
 	</body>
 	<!-- end::Body -->
