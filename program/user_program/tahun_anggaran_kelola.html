@@ -414,24 +414,24 @@
                }
 
             });
-            };
-            return {
-               init: function () {
-                  iniTblChildRow();
-               },
-            };
-            }();
-            jQuery(document).ready(function () {
-               KTDatatablesSearchOptionsAdvancedSearch.init();
-            });
+         };
+         return {
+            init: function () {
+               iniTblChildRow();
+            },
+         };
+      }();
+      jQuery(document).ready(function () {
+         KTDatatablesSearchOptionsAdvancedSearch.init();
+      });
    </script>
-<script>
-   $(document).on('click', '.btn-toogle-data', function() {
-      let counter = $(this).data('counter');
-      alert(counter);
-   });
-</script>
-<!--end::Page Scripts -->
+   <script>
+      $(document).on('click', '.btn-toogle-data', function() {
+         let counter = $(this).data('counter');
+         alert(counter);
+      });
+   </script>
+   <!--end::Page Scripts -->
 </body>
 <!-- end::Body -->
 
