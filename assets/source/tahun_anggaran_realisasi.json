@@ -7,12 +7,14 @@
           "tahun": 2019,
           "penggunaAnggaran": "Ir. H. DENNY IRAWAN SAARDI., M.Si",
           "status": null,
+          "statusx": "tidak aktif",
           "aksi": null
       },
       {
          "tahun": 2020,
          "penggunaAnggaran": "Ir. H. AHMAD RIFALDI., M.Si",
          "status": null,
+         "statusx": "aktif",
          "aksi": null
          
       },
@@ -20,6 +22,7 @@
          "tahun": 2021,
          "penggunaAnggaran": "Ir. H. FASCAL IVANDRY., M.Si",
          "status": null,
+         "statusx": "tidak aktif",
          "aksi": null
          
       }

@@ -15,7 +15,7 @@ body{
 }
 
 .kt-aside-menu .kt-menu__nav>.kt-menu__item.kt-menu__item--active>.kt-menu__link,
-   {
+{
    background-color: #fe9e02;
 }
 
@@ -258,6 +258,17 @@ tr.shown td.details-control {
 /*Akhir Tabel Program dan Realisasi Tahun Anggaran*/
 
 
+/*Table Anggaran Kelola - Tambah*/
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-cly1{text-align:center;vertical-align:middle}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+/*Akhir Tabel Anggaran Kelola - Tambah*/
+
+
 
 /*Responsive*/
 @media(max-width: 1024px) {
@@ -304,7 +315,7 @@ tr.shown td.details-control {
    }
 
    #info-mobile h6,
-      {
+   {
       color: #0b1c2c;
    }
 
