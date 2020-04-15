@@ -185,24 +185,24 @@
 												<table class="table table-bordered" id="TblKunjungan">
 													<thead>
 														<tr>
-                                             <th rowspan="2">No</th>
-                                             <th rowspan="2">Tanggal</th>
-                                             <th colspan="2">Kunjungan Tanpa Tiket</th>
-                                             <th colspan="2">Tiket Dewasa</th>
-                                             <th colspan="2">Tiket Anak</th>
-                                             <th colspan="2">Mancanegara</th>
-                                             <th rowspan="2">Total Resu</th>
-                                           </tr>
-                                           <tr>
-                                             <th>Mancanegara</th>
-                                             <th>Lokal</th>
-                                             <th>No. Seri</th>
-                                             <th>Lembar</th>
-                                             <th>No. Seri</th>
-                                             <th>Lembar</th>
-                                             <th>No.Seri</th>
-                                             <th>Lembar</th>
-                                           </tr>
+															<th rowspan="2">No</th>
+															<th rowspan="2">Tanggal</th>
+															<th colspan="2">Kunjungan Tanpa Tiket</th>
+															<th colspan="2">Tiket Dewasa</th>
+															<th colspan="2">Tiket Anak</th>
+															<th colspan="2">Mancanegara</th>
+															<th rowspan="2">Total Resu</th>
+														</tr>
+														<tr>
+															<th>Mancanegara</th>
+															<th>Lokal</th>
+															<th>No. Seri</th>
+															<th>Lembar</th>
+															<th>No. Seri</th>
+															<th>Lembar</th>
+															<th>No.Seri</th>
+															<th>Lembar</th>
+														</tr>
 													</thead>
 												</table>
 											</div>
@@ -302,8 +302,8 @@
 											<div class="input-group-append"><span class="input-group-text" id="basic-addon2">Lembar</span></div>
 										</div>
 									</div>
-                        </div>
-                        <div class="kt-separator kt-separator--border-dashed"></div>
+								</div>
+								<div class="kt-separator kt-separator--border-dashed"></div>
 								<div class="form-group row">
 									<label for="noSeriTiketAnak" class="col-4 col-form-label">No. Seri Tiket</label>
 									<div class="col-3">
@@ -315,8 +315,8 @@
 									<div class="col-3">
 										<input id="noSeriTiketAnakAkhir" name="noSeriTiketAnakAkhir" type="text" class="form-control" placeholder="input seri">
 									</div>
-                        </div>
-                        <div class="form-group row">
+								</div>
+								<div class="form-group row">
 									<label for="jumTiketMancanegara" class="col-4 col-form-label">Tiket Mancanegara</label>
 									<div class="col-8">
 										<div class="input-group">
@@ -324,7 +324,7 @@
 											<div class="input-group-append"><span class="input-group-text" id="basic-addon2">Lembar</span></div>
 										</div>
 									</div>
-                        </div>
+								</div>
 								<h5 class="mt-5">Penyewaan</h5>
 								<hr>
 								<div class="form-group row">
@@ -340,6 +340,109 @@
 
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+								<button type="button" class="btn btn-success btn_save">Simpan</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="mdlUpdateTempaWisata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Data Kunjugan <span name="namaKategori">Pantai Bira</span></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group row">
+									<label for="tanggal" class="col-4 col-form-label">Tanggal</label>
+									<div class="col-8">
+										<input class="form-control input-edit" type="text" value="20 Nov 2020" id="tanggal" name="tanggal" readonly>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="jumTamuLokal" class="col-4 col-form-label">Tamu Lokal</label>
+									<div class="col-8">
+										<input class="form-control" type="number" placeholder="input jumlah tamu" id="jumTamuLokal" name="jumTamuLokal">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="jumTamuMancanegara" class="col-4 col-form-label">Tamu Mancanegara</label>
+									<div class="col-8">
+										<input class="form-control" type="number" placeholder="input jumlah tamu" id="jumTamuMancanegara" name="jumTamuMancanegara">
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+								<button type="button" class="btn btn-success btn_save">Simpan</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="mdlUpdateTransportasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Data Penumpang <span name="namaKategori">BMA Trans</span></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="form-group row">
+									<label for="tanggal" class="col-4 col-form-label">Tanggal</label>
+									<div class="col-8">
+										<input class="form-control input-edit" type="text" value="20 Nov 2020" id="tanggal" name="tanggal" readonly>
+									</div>
+								</div>
+								<div class="wrap-table">
+									<table class="table">
+										<tr>
+											<th style="width: 50%;">Trayek Transportasi</th>
+											<th style="width: 25%;">Lokal</th>
+											<th style="width: 25%;">Mancanegara</th>
+										</tr>
+										<tr>
+											<td>Makassar - Toraja</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekLokal">
+											</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekMancanegara">
+											</td>
+										</tr>
+										<tr>
+											<td>Makassar - Bulukumba</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekLokal">
+											</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekMancanegara">
+											</td>
+										</tr>
+										<tr>
+											<td>Makassar - Pare-Pare</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekLokal">
+											</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekMancanegara">
+											</td>
+										</tr>
+										<tr>
+											<td>Makassar - Majene</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekLokal">
+											</td>
+											<td>
+												<input type="number" class="form-control" placeholder="-" name="jumTrayekMancanegara">
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
 								<button type="button" class="btn btn-success btn_save">Simpan</button>
 							</div>
 						</div>
@@ -422,54 +525,54 @@
                   	data: {
                         // parameters for custom backend script demo
 
-                     },
-                  },
-                  columns: [{
-                  	data: 'no',
-                  	title: 'No',
-                  	className: 'text-center',
-                  	render: function (data, type, row, meta) {
-                  		return meta.row + meta.settings._iDisplayStart + 1;
-                  	},
-                  	width: 35,
-                  	orderable: false,
-                  }, {
-                  	data: 'tanggal',
-                  	title: 'Tanggal',
-                  }, {
-                  	data: 'mancanegara',
-                  	title: 'Mancanegara',
-                  }, {
-                  	data: 'lokal',
-                  	title: 'Lokal',
-                  },{
-                  	data: 'tdNoSeri',
-                  	title: 'No. Seri',
-                  },{
-                  	data: 'tdLembar',
-                  	title: 'Lembar',
-                  },{
-                  	data: 'taNoSeri',
-                  	title: 'No. Seri',
-                  },{
-                  	data: 'taLembar',
-                  	title: 'Lembar',
-                  },{
-                  	data: 'mancaNoSeri',
-                  	title: 'No. Seri',
-                  },{
-                  	data: 'mancaLembar',
-                  	title: 'Lembar',
-                  },{
-                  	data: 'totalResu',
-                  	title: 'Total Resu',
-                  }],
-                  columnDefs: [{
-                  	targets: [0, 1, 2, 3, 4,5 ,6, 7, 8, 9, 10],
-                  	className: 'text-center',
-                  	orderable: true,
-                  }],
-               });
+                    },
+                },
+                columns: [{
+                	data: 'no',
+                	title: 'No',
+                	className: 'text-center',
+                	render: function (data, type, row, meta) {
+                		return meta.row + meta.settings._iDisplayStart + 1;
+                	},
+                	width: 35,
+                	orderable: false,
+                }, {
+                	data: 'tanggal',
+                	title: 'Tanggal',
+                }, {
+                	data: 'mancanegara',
+                	title: 'Mancanegara',
+                }, {
+                	data: 'lokal',
+                	title: 'Lokal',
+                },{
+                	data: 'tdNoSeri',
+                	title: 'No. Seri',
+                },{
+                	data: 'tdLembar',
+                	title: 'Lembar',
+                },{
+                	data: 'taNoSeri',
+                	title: 'No. Seri',
+                },{
+                	data: 'taLembar',
+                	title: 'Lembar',
+                },{
+                	data: 'mancaNoSeri',
+                	title: 'No. Seri',
+                },{
+                	data: 'mancaLembar',
+                	title: 'Lembar',
+                },{
+                	data: 'totalResu',
+                	title: 'Total Resu',
+                }],
+                columnDefs: [{
+                	targets: [0, 1, 2, 3, 4,5 ,6, 7, 8, 9, 10],
+                	className: 'text-center',
+                	orderable: true,
+                }],
+            });
 				table.on('order.dt search.dt', function () {
 					table.column(0, {
 						search: 'applied',
@@ -525,76 +628,76 @@
             				)
                         // result.dismiss can be 'cancel', 'overlay',
                         // 'close', and 'timer'
-                     } else if (result.dismiss === 'cancel') {
-                     	swal.fire(
-                     		'Cancelled',
-                     		'Your imaginary file is safe :)',
-                     		'error'
-                     		)
-                     }
-                  });
+                    } else if (result.dismiss === 'cancel') {
+                    	swal.fire(
+                    		'Cancelled',
+                    		'Your imaginary file is safe :)',
+                    		'error'
+                    		)
+                    }
+                });
             });
-         };
+        };
 
-         return {
+        return {
             // Init
             init: function() {
             	initDemos();
             },
-         };
-      }();
+        };
+    }();
 
          // Class Initialization
          jQuery(document).ready(function() {
          	KTSweetAlert2Demo.init();
          });
-      </script>
-      <script>
-      	var KTBootstrapDatepicker = function () {
+     </script>
+     <script>
+     	var KTBootstrapDatepicker = function () {
 
-      		var arrows;
-      		if (KTUtil.isRTL()) {
-      			arrows = {
-      				leftArrow: '<i class="la la-angle-right"></i>',
-      				rightArrow: '<i class="la la-angle-left"></i>'
-      			}
-      		} else {
-      			arrows = {
-      				leftArrow: '<i class="la la-angle-left"></i>',
-      				rightArrow: '<i class="la la-angle-right"></i>'
-      			}
-      		}
+     		var arrows;
+     		if (KTUtil.isRTL()) {
+     			arrows = {
+     				leftArrow: '<i class="la la-angle-right"></i>',
+     				rightArrow: '<i class="la la-angle-left"></i>'
+     			}
+     		} else {
+     			arrows = {
+     				leftArrow: '<i class="la la-angle-left"></i>',
+     				rightArrow: '<i class="la la-angle-right"></i>'
+     			}
+     		}
 
-      		var demos = function () {
-      			$('.datepicker_mode').datepicker({
-      				rtl: KTUtil.isRTL(),
-      				todayHighlight: true,
-      				orientation: "bottom left",
-      				templates: arrows
-      			});
-      		}
+     		var demos = function () {
+     			$('.datepicker_mode').datepicker({
+     				rtl: KTUtil.isRTL(),
+     				todayHighlight: true,
+     				orientation: "bottom left",
+     				templates: arrows
+     			});
+     		}
 
-      		return {
-      			init: function() {
-      				demos(); 
-      			}
-      		};
-      	}();
+     		return {
+     			init: function() {
+     				demos(); 
+     			}
+     		};
+     	}();
 
-      	jQuery(document).ready(function() {    
-      		KTBootstrapDatepicker.init();
-      	});
-      </script>
+     	jQuery(document).ready(function() {    
+     		KTBootstrapDatepicker.init();
+     	});
+     </script>
 
-      <!--end::Page Scripts -->
-      <script type="text/javascript">
-      	$(document).ready(function(){
+     <!--end::Page Scripts -->
+     <script type="text/javascript">
+     	$(document).ready(function(){
 
           // Format mata uang.
           $( '.uang' ).mask('000.000.000', {reverse: true});
 
-       })
-    </script>
- </body>
- <!-- end::Body -->
- </html>
+      })
+  </script>
+</body>
+<!-- end::Body -->
+</html>
