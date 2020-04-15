@@ -294,7 +294,7 @@
          });
          var iniTblChildRow = function() {
             function format ( d, tds ) {
-               var trs='';
+               var trs='<tr class="childTH"><th style="width:30px"></th><th>Kode Rekening</th><th>Uraian</th><th>Bidang</th><th>Anggaran</th><th>Realisasi</th><th>Sisa Pagu</th><th>%</th><th>Status</th><th>Rincian</th></tr>';
                $.each($(d.kodeRek_child),function(key,value){
                   var validasi = `
                   <div class="kt-checkbox-list">
@@ -316,7 +316,7 @@
                   var return_status = '<span  class="btn btn-bold btn-sm btn-font-sm ' + status[d.status_child[key]].class + '">' + status[d.status_child[key]].title + '</span>';
 
                   var aksi = '<a href="program/user_program/tahun_anggaran_kelola_realisasi.html" class="btn btn-sm btn-primary" style="color:white">Realisasi</a>';
-                  trs+='<tr><td style="width:30px"></td><td>'+value+
+                  trs+='<tr><td ></td><td>'+value+
                   '</td><td>'+d.uraian_child[key]+
                   '</td><td>'+d.bidang_child[key]+
                   '</td><td>'+d.anggaran_child[key]+
@@ -380,21 +380,10 @@
                      }
                      return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
                   },
-               },{
-                  field: 'rincian',
-                  title: 'Rincian',
-                  responsivePriority: -1,
-                  className: 'text-center',
-                  orderable: false,
-                  render: function(data, type, full, meta) {
-
-                     return `
-                     <a href="program/user_program/tahun_anggaran_kelola_realisasi.html" class="btn btn-sm btn-primary" style="color:white">Realisasi</a>`;
-                  },
                }],
                columnDefs: [
                {
-                  targets: [0,1,2,3,4,5,6,7,8,9],
+                  targets: [0,1,2,3,4,5,6,7,8],
                   className: 'text-center'
                }
                ]

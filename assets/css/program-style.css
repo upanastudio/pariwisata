@@ -269,6 +269,16 @@ tr.shown td.details-control {
 /*Akhir Tabel Anggaran Kelola - Tambah*/
 
 
+.childTH th{
+   font-size: 1rem;
+   font-weight: 500;
+}
+
+#childrow_contoh th{
+  background-color:  #efefef;
+}
+
+
 
 /*Responsive*/
 @media(max-width: 1024px) {
