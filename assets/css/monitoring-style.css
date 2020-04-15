@@ -213,11 +213,12 @@ body{
    font-size: .95rem;
 }
 
-#namaHotel,#lokasiHotel{
-   font-size: 1.5rem;
-}
-
-.tujuanTrans, .lokasiTrans, .nama_wisata, .lokasi_wisata{
+.tujuan_trans, 
+.lokasi_trans, 
+.nama_wisata, 
+.lokasi_wisata,
+.nama_hotel,
+.lokasi_hotel{
 	font-size: 1.5rem;
 }
 
