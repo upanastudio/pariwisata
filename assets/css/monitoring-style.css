@@ -217,6 +217,10 @@ body{
    font-size: 1.5rem;
 }
 
+.tujuanTrans, .lokasiTrans, .nama_wisata, .lokasi_wisata{
+	font-size: 1.5rem;
+}
+
 
 
 /*Responsive*/
