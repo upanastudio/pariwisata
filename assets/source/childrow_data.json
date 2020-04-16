@@ -12,6 +12,7 @@
 		"status" : "belum",
 		"aksi" : null,
 		"rincian" : null,
+		"childKey": 1,
 		"kodeRek_child": [
 			"1.02.16.1.02.16.01.00.01.007", "1.02.16.1.02.16.01.00.01.008"
 		],
@@ -52,6 +53,7 @@
 		"persentase" : "1.06%",
 		"status" : "belum",
 		"aksi" : null,
+		"childKey": 1,
 		"rincian" : null,
 		"kodeRek_child": [
 			"1.02.16.1.02.16.01.00.01.007", "1.02.16.1.02.16.01.00.01.008"
@@ -79,6 +81,48 @@
 		],
 		"aksi_child": [
 			null, null
+		]
+
+	},{
+		"no" : 3,
+		"kodeRekening" : "1.02.16.1.02.16.01.00.619",
+		"uraian" : "PROGRAM PENGELOLAAN KEKAYAAN DAN KERAGAMAN BUDAYA",
+		"jenis_sika" : "Izin Penggunaan Listrik dalam vessel",
+		"bidang" : "Bidang Pemasaran, Bidang Cagar dan Budaya, Bidang Kesenian Eknomi Kreatif",
+		"anggaran" : "55.356.365.882,80",
+		"realisasi" : "586.552.667,00",
+		"sisaPagu" : "54.768.813.215,80",
+		"persentase" : "1.06%",
+		"status" : "belum",
+		"aksi" : null,
+		"childKey": 0,
+		"rincian" : null,
+		"kodeRek_child": [
+			null
+		],
+		"uraian_child": [
+			null
+		],
+		"bidang_child": [
+			null
+		],
+		"anggaran_child": [
+			null
+		],
+		"sisaPagu_child": [
+			null
+		],
+		"realisasi_child": [
+			null
+		],
+		"persentase_child": [
+			null
+		],
+		"status_child": [
+			null
+		],
+		"aksi_child": [
+			null
 		]
 
 	}]

@@ -285,54 +285,52 @@
    <script src="assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
    <script>
       "use strict";
+      var mantul;
       var KTDatatablesSearchOptionsAdvancedSearch = function () {
          $.fn.dataTable.Api.register('column().title()', function () {
             return $(this.header()).text().trim();
          });
          var iniTblChildRow = function() {
             function format ( d, tds ) {
-               var trs='';
+               var trs='<tr class="childTH"><th style="width:30px"></th><th>Kode Rekening</th><th>Uraian</th><th>Bidang</th><th>Anggaran</th><th>Realisasi</th><th>Sisa Pagu</th><th>%</th><th>Status</th><th>Rincian</th></tr>';
                $.each($(d.kodeRek_child),function(key,value){
-                  var validasi = `
-                  <div class="kt-checkbox-list">
-                  <label class="kt-checkbox kt-checkbox--bold kt-checkbox--success validasi_check">
-                  <input disabled checked="" type="checkbox" id="check_hsse" name="check_hsse"> HSSE
-                  <span></span>
-                  </label>
-                  <label class="kt-checkbox kt-checkbox--bold kt-checkbox--success validasi_check">
-                  <input disabled checked="" type="checkbox" id="check_gsi" name="check_hsse"> GSI
-                  <span></span>
-                  </label>
-                  </div>`;
 
                   var status = {
                      belum: {'title': 'Belum', 'class': 'btn-label-danger'},
                      progress : {'title' : 'Progress','class' : 'btn-label-warning'},
                      selesai : {'title' : 'Selesai', 'class' : 'btn-label-success done-status'},
+                     null: {'title' : null, 'class' : null},
                   };
                   var return_status = '<span  class="btn btn-bold btn-sm btn-font-sm ' + status[d.status_child[key]].class + '">' + status[d.status_child[key]].title + '</span>';
 
                   var aksi = '<a href="program/user_bidang/tahun_anggaran_kelola_realisasi.html" class="btn btn-sm btn-primary" style="color:white">Realisasi</a>';
-                  trs+='<tr><td style="width:30px"></td><td>'+value+
-                  '</td><td>'+d.uraian_child[key]+
-                  '</td><td>'+d.bidang_child[key]+
-                  '</td><td>'+d.anggaran_child[key]+
-                  '</td><td>'+d.realisasi_child[key]+
-                  '</td><td>'+d.sisaPagu_child[key]+
-                  '</td><td>'+d.persentase_child[key]+
-                  '</td><td>'+return_status+
-                  '</td><td>'+aksi+
-                  '</td></tr>';
+
+                     trs+='<tr><td ></td><td>'+value+
+                     '</td><td>'+d.uraian_child[key]+
+                     '</td><td>'+d.bidang_child[key]+
+                     '</td><td>'+d.anggaran_child[key]+
+                     '</td><td>'+d.realisasi_child[key]+
+                     '</td><td>'+d.sisaPagu_child[key]+
+                     '</td><td>'+d.persentase_child[key]+
+                     '</td><td>'+return_status+
+                     '</td><td>'+aksi+
+                     '</td></tr>';
+
+                  mantul = d.childKey;
+                  
 
                })
+
+
                return '<table  class="table text-center">'+trs+   
                '</table>';
             }
 
+
             var table = $('#childrow_contoh').DataTable({
                "ajax": 'assets/source/childrow_data.json',
                columns: [
-               {
+               { 
                   class: 'details-control',
                   orderable: false,
                   searchable: false,
@@ -368,7 +366,7 @@
                   responsivePriority: -1,
                   render: function(data, type, full, meta) {
                      var status = {
-                        belum: {'title': 'Belum', 'class': 'btn-label-danger'},
+                        belum: {'title': 'Belum Selesai', 'class': 'btn-label-danger'},
                         progress : {'title' : 'Progress', 'class' : 'btn-label-warning'},
                         selesai : {'title' : 'Selesai', 'class' : 'btn-label-success'},
                      };
@@ -377,25 +375,16 @@
                      }
                      return '<span style="width:100%" class="btn btn-bold btn-sm btn-font-sm ' + status[data].class + '">' + status[data].title + '</span>';
                   },
-               },{
-                  field: 'rincian',
-                  title: 'Rincian',
-                  responsivePriority: -1,
-                  className: 'text-center',
-                  orderable: false,
-                  render: function(data, type, full, meta) {
-
-                     return `
-                     <a href="program/user_bidang/tahun_anggaran_kelola_realisasi.html" class="btn btn-sm btn-primary" style="color:white">Realisasi</a>`;
-                  },
                }],
                columnDefs: [
                {
-                  targets: [0,1,2,3,4,5,6,7,8,9],
+                  targets: [0,1,2,3,4,5,6,7,8],
                   className: 'text-center'
                }
                ]
             });
+
+
             $('#childrow_contoh tbody').on('click', 'td.details-control', function () {
                var tr = $(this).closest('tr');
                var row = table.row( tr );
@@ -411,23 +400,19 @@
                }
 
             });
-            };
-            return {
-               init: function () {
-                  iniTblChildRow();
-               },
-            };
-            }();
-            jQuery(document).ready(function () {
-               KTDatatablesSearchOptionsAdvancedSearch.init();
-            });
+
+            
+         };
+         return {
+            init: function () {
+               iniTblChildRow();
+            },
+         };
+      }();
+      jQuery(document).ready(function () {
+         KTDatatablesSearchOptionsAdvancedSearch.init();
+      });
    </script>
-<script>
-   $(document).on('click', '.btn-toogle-data', function() {
-      let counter = $(this).data('counter');
-      alert(counter);
-   });
-</script>
 <!--end::Page Scripts -->
 </body>
 <!-- end::Body -->
