@@ -210,6 +210,7 @@
 							<div class="modal-body">
 								<div class id="tanggalJatuhTempo" ></div>
 								<input name="id-modal" id="id-modal" type="hidden">
+								<input type="hidden" name="date" id="my_hidden_input" value="">
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -301,31 +302,31 @@
 			            	data: {
 			                    // parameters for custom backend script demo
 			                    
+			                  },
 			                },
-			            },
-			            columns: [{
-			            	data: 'no',
-			            	title: 'No',
-			            	className: 'text-center',
-			            	render: function(data, type, row, meta) {
-			            		return meta.row + meta.settings._iDisplayStart + 1;
-			            	},
-			            	width: 35,
-			            	orderable: false,
-			            }, {
-			            	data: 'jenisKendaraan',
-			            	title: 'Jenis Kendaraan',
-			            }, {
-			            	data: 'noPolisi',
-			            	title: 'No. Polisi',
-			            },{
-			            	data: 'penanggungJawab',
-			            	title: 'Penanggung Jawab',
-			            },{
-			            	data: 'tglJatuhTempo',
-			            	title: 'Jatuh Tempo Pajak',
-			            	width: 150,
-			            	render: function(data, type, full, meta) {
+			                columns: [{
+			                	data: 'no',
+			                	title: 'No',
+			                	className: 'text-center',
+			                	render: function(data, type, row, meta) {
+			                		return meta.row + meta.settings._iDisplayStart + 1;
+			                	},
+			                	width: 35,
+			                	orderable: false,
+			                }, {
+			                	data: 'jenisKendaraan',
+			                	title: 'Jenis Kendaraan',
+			                }, {
+			                	data: 'noPolisi',
+			                	title: 'No. Polisi',
+			                },{
+			                	data: 'penanggungJawab',
+			                	title: 'Penanggung Jawab',
+			                },{
+			                	data: 'tglJatuhTempo',
+			                	title: 'Jatuh Tempo Pajak',
+			                	width: 150,
+			                	render: function(data, type, full, meta) {
 			            		// return '<input class="form-control inputJatuhTempo" placeholder="Belum Ditetapkan" type="text" value="'+data+'" id="tglJatuhTempo" name="tglJatuhTempo">'
 			            		if (data == "Belum Ditetapkan") {
 			            			return `<button data-id="${full.idData}" class="btn btn-label-danger" data-toggle="modal" data-target="#modal_tanggal">${data}
@@ -361,9 +362,9 @@
 			            			Bayar
 			            			</button>`
 			            		}
-			            			return `<button data-id="${full.idData}" class="btn btn-success btn_bayar">
-			            			Bayar
-			            			</button>`
+			            		return `<button data-id="${full.idData}" class="btn btn-success btn_bayar">
+			            		Bayar
+			            		</button>`
 			            		
 			            	},
 			            },],
@@ -372,7 +373,7 @@
 			            	className: 'text-center',
 			            	orderable: true,
 			            }],
-			        });
+			          });
 				table.on('order.dt search.dt', function() {
 					table.column(0, {
 						search: 'applied',
@@ -444,8 +445,17 @@
 				 	rtl: KTUtil.isRTL(),
 				 	todayHighlight: true,
 				 	templates: arrows,
-				 	dateFormat: 'dd-mm-yy'
+				 	dateFormat: 'dd-mm-yyyy',
+				 	inline: true,
+				 	sideBySide: true
 				 });
+
+				 $('#tanggalJatuhTempo').on('changeDate', function(event) {
+			    var formatted_date = event.format('dd-mm-yyyy');
+			    $('#my_hidden_input').val(formatted_date);
+			    // var nilai = $('#my_hidden_input').val();
+			    // console.log(nilai);
+			  });
 				}
 
 				return {
@@ -469,8 +479,8 @@
 					url:"http://localhost/aset_fe/assets/source/true.json",
 					data:{kalender : kalender, id : id},
 					success: function (html) {
-				    	location.reload();
-				    }
+						location.reload();
+					}
 				});
 			})
 
