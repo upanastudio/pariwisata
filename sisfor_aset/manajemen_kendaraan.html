@@ -223,6 +223,70 @@
 						</div>
 					</div>
 				</div>
+				<div class="modal fade" data-backdrop="static" id="modal_noPolisi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLongTitle">
+									Nomor Polisi
+								</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<form action="">
+								<div class="modal-body">
+									<div class="form-group row">
+										<label for="kodeBarang" class="col-3 col-form-label">No. Polisi</label>
+										<div class="col-9">
+											<input class="form-control" type="text" id="noPolisi" name="noPolisi" placeholder="input nomor polisi">
+										</div>
+									</div>
+									<input name="id-modal" id="id-modal" type="hidden">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">
+										<i class="fa fa-times"></i> Batal
+									</button>
+									<button id="btn_simpanNoPolisi" type="button" class="btn btn-primary">
+										<i class="fa fa-save"></i> Simpan
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" data-backdrop="static" id="modal_PJ" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLongTitle">
+									Penangggun Jawab
+								</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								</button>
+							</div>
+							<form action="">
+								<div class="modal-body">
+									<div class="form-group row">
+										<label for="kodeBarang" class="col-4 col-form-label">Penanggung Jawab</label>
+										<div class="col-8">
+											<input class="form-control" type="text" id="penanggungJawab" name="penanggungJawab" placeholder="input nama penanggung jawab">
+										</div>
+									</div>
+									<input name="id-modal" id="id-modal" type="hidden">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">
+										<i class="fa fa-times"></i> Batal
+									</button>
+									<button id="btn_simpanPJ" type="button" class="btn btn-primary">
+										<i class="fa fa-save"></i> Simpan
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 				<!-- End: Modal -->
 				<!-- begin:: Footer -->
 				<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
@@ -302,34 +366,42 @@
 			            	data: {
 			                    // parameters for custom backend script demo
 			                    
-			                  },
 			                },
-			                columns: [{
-			                	data: 'no',
-			                	title: 'No',
-			                	className: 'text-center',
-			                	render: function(data, type, row, meta) {
-			                		return meta.row + meta.settings._iDisplayStart + 1;
-			                	},
-			                	width: 35,
-			                	orderable: false,
-			                }, {
-			                	data: 'jenisKendaraan',
-			                	title: 'Jenis Kendaraan',
-			                }, {
-			                	data: 'noPolisi',
-			                	title: 'No. Polisi',
-			                },{
-			                	data: 'penanggungJawab',
-			                	title: 'Penanggung Jawab',
-			                },{
-			                	data: 'tglJatuhTempo',
-			                	title: 'Jatuh Tempo Pajak',
-			                	width: 150,
-			                	render: function(data, type, full, meta) {
+			            },
+			            columns: [{
+			            	data: 'no',
+			            	title: 'No',
+			            	className: 'text-center',
+			            	render: function(data, type, row, meta) {
+			            		return meta.row + meta.settings._iDisplayStart + 1;
+			            	},
+			            	width: 35,
+			            	orderable: false,
+			            }, {
+			            	data: 'jenisKendaraan',
+			            	title: 'Jenis Kendaraan',
+			            }, {
+			            	data: 'noPolisi',
+			            	title: 'No. Polisi',
+			            	render: function(data, type,full,meta){
+			            		return `<button data-id="${full.idData}" class="btn btn-info btn-block" data-toggle="modal" data-target="#modal_noPolisi">${data}
+			            		</button>`
+			            	}
+			            },{
+			            	data: 'penanggungJawab',
+			            	title: 'Penanggung Jawab',
+			            	render: function(data, type,full,meta){
+			            		return `<button data-id="${full.idData}" class="btn btn-warning btn-block" data-toggle="modal" data-target="#modal_PJ">${data}
+			            		</button>`
+			            	}
+			            },{
+			            	data: 'tglJatuhTempo',
+			            	title: 'Jatuh Tempo Pajak',
+			            	width: 150,
+			            	render: function(data, type, full, meta) {
 			            		// return '<input class="form-control inputJatuhTempo" placeholder="Belum Ditetapkan" type="text" value="'+data+'" id="tglJatuhTempo" name="tglJatuhTempo">'
 			            		if (data == "Belum Ditetapkan") {
-			            			return `<button data-id="${full.idData}" class="btn btn-label-danger" data-toggle="modal" data-target="#modal_tanggal">${data}
+			            			return `<button data-id="${full.idData}" class="btn btn-danger" data-toggle="modal" data-target="#modal_tanggal">${data}
 			            			</button>`
 			            		}
 			            		else {
@@ -373,7 +445,7 @@
 			            	className: 'text-center',
 			            	orderable: true,
 			            }],
-			          });
+			        });
 				table.on('order.dt search.dt', function() {
 					table.column(0, {
 						search: 'applied',
@@ -406,9 +478,23 @@
 			$("#modal_tanggal").on('shown.bs.modal', function (e) {
 				let id = $(e.relatedTarget).data('id');
 				$("#id-modal").val(id);
+				// console.log("ID : " + id);
+			});
+			$("#modal_noPolisi").on('shown.bs.modal', function (e) {
+				let id = $(e.relatedTarget).data('id');
+				$("#id-modal").val(id);
+				// console.log("ID : " + id);
+			});
+			$("#modal_PJ").on('shown.bs.modal', function (e) {
+				let id = $(e.relatedTarget).data('id');
+				$("#id-modal").val(id);
 				console.log("ID : " + id);
 			});
 		}();
+
+		// var panggilID = function () {
+
+		// }
 
 		jQuery(document).ready(function() {
 			KTDatatablesSearchOptionsAdvancedSearch.init();
@@ -451,11 +537,11 @@
 				 });
 
 				 $('#tanggalJatuhTempo').on('changeDate', function(event) {
-			    var formatted_date = event.format('dd-mm-yyyy');
-			    $('#my_hidden_input').val(formatted_date);
-			    // var nilai = $('#my_hidden_input').val();
-			    // console.log(nilai);
-			  });
+				 	var formatted_date = event.format('dd-mm-yyyy');
+				 	$('#my_hidden_input').val(formatted_date);
+				 	var nilai = $('#my_hidden_input').val();
+				 	// console.log(nilai);
+				 });
 				}
 
 				return {
@@ -471,8 +557,8 @@
 		</script>
 		<script>
 			$("#btn_simpanTanggal").on('click',function(){
-				var kalender = $('#tanggalJatuhTempo').val();
-				var id = $('#id-modal').val();
+				let kalender = $('#tanggalJatuhTempo').val();
+				let id = $('#id-modal').val();
 				$.ajax({
 					type:"POST",
 					cache:false,
@@ -480,6 +566,40 @@
 					data:{kalender : kalender, id : id},
 					success: function (html) {
 						location.reload();
+					}
+				});
+			})
+
+			$("#btn_simpanNoPolisi").on('click',function(){
+				let noPolisi = $('#noPolisi').val();
+				let id = $('#id-modal').val();
+				console.log ()
+				$.ajax({
+					type:"POST",
+					cache:false,
+					url:"http://localhost/aset_fe/assets/source/true.json",
+					data:{noPolisi : noPolisi, id : id},
+					success: function (html) {
+						location.reload();
+						console.log(id);
+						console.log(noPolisi);
+					}
+				});
+			})
+
+			$("#btn_simpanPJ").on('click',function(){
+				let pj = $('#penanggungJawab').val();
+				let id = $('#id-modal').val();
+				console.log ()
+				$.ajax({
+					type:"POST",
+					cache:false,
+					url:"http://localhost/aset_fe/assets/source/true.json",
+					data:{penanggungJawab : pj, id : id},
+					success: function (html) {
+						location.reload();
+						console.log(id);
+						console.log(pj);
 					}
 				});
 			})
@@ -494,7 +614,7 @@
 					url:"http://localhost/aset_fe/assets/source/true.json",
 					data:id,
 					success: function (html) {
-						console.log(id);
+						// console.log(id);
 						location.reload();
 					}
 				})
