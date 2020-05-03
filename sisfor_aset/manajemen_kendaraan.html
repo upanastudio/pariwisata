@@ -209,7 +209,7 @@
 							</div>
 							<div class="modal-body">
 								<div class id="tanggalJatuhTempo" ></div>
-								<input name="id-modal" id="id-modal" type="hidden">
+								<input name="id-modalTanggal" id="id-modalTanggal" type="hidden">
 								<input type="hidden" name="date" id="my_hidden_input" value="">
 							</div>
 							<div class="modal-footer">
@@ -241,7 +241,7 @@
 											<input class="form-control" type="text" id="noPolisi" name="noPolisi" placeholder="input nomor polisi">
 										</div>
 									</div>
-									<input name="id-modal" id="id-modal" type="hidden">
+									<input name="id-modalNoPolisi" id="id-modalNoPolisi" type="hidden">
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -273,7 +273,7 @@
 											<input class="form-control" type="text" id="penanggungJawab" name="penanggungJawab" placeholder="input nama penanggung jawab">
 										</div>
 									</div>
-									<input name="id-modal" id="id-modal" type="hidden">
+									<input name="id-modalPJ" id="id-modalPJ" type="hidden">
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -477,17 +477,17 @@
 		var panggilModal = function () {
 			$("#modal_tanggal").on('shown.bs.modal', function (e) {
 				let id = $(e.relatedTarget).data('id');
-				$("#id-modal").val(id);
+				$("#id-modalTanggal").val(id);
 				// console.log("ID : " + id);
 			});
 			$("#modal_noPolisi").on('shown.bs.modal', function (e) {
 				let id = $(e.relatedTarget).data('id');
-				$("#id-modal").val(id);
+				$("#id-modalNoPolisi").val(id);
 				// console.log("ID : " + id);
 			});
 			$("#modal_PJ").on('shown.bs.modal', function (e) {
 				let id = $(e.relatedTarget).data('id');
-				$("#id-modal").val(id);
+				$("#id-modalPJ").val(id);
 				console.log("ID : " + id);
 			});
 		}();
@@ -540,7 +540,7 @@
 				 	var formatted_date = event.format('dd-mm-yyyy');
 				 	$('#my_hidden_input').val(formatted_date);
 				 	var nilai = $('#my_hidden_input').val();
-				 	// console.log(nilai);
+				 	console.log(nilai);
 				 });
 				}
 
@@ -558,7 +558,7 @@
 		<script>
 			$("#btn_simpanTanggal").on('click',function(){
 				let kalender = $('#tanggalJatuhTempo').val();
-				let id = $('#id-modal').val();
+				let id = $('#id-modalTanggal').val();
 				$.ajax({
 					type:"POST",
 					cache:false,
@@ -566,13 +566,14 @@
 					data:{kalender : kalender, id : id},
 					success: function (html) {
 						location.reload();
+						console.log(id);
 					}
 				});
 			})
 
 			$("#btn_simpanNoPolisi").on('click',function(){
 				let noPolisi = $('#noPolisi').val();
-				let id = $('#id-modal').val();
+				let id = $('#id-modalNoPolisi').val();
 				console.log ()
 				$.ajax({
 					type:"POST",
@@ -589,7 +590,7 @@
 
 			$("#btn_simpanPJ").on('click',function(){
 				let pj = $('#penanggungJawab').val();
-				let id = $('#id-modal').val();
+				let id = $('#id-modalPJ').val();
 				console.log ()
 				$.ajax({
 					type:"POST",
