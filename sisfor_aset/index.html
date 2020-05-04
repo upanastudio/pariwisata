@@ -332,7 +332,8 @@
 								</div>
 							</div>							
 						</div>
-
+						
+						<!--Start copy from here -->
 						<div class="row mt-5">
 							<div class="col-md">
 								<div class="kt-portlet kt-portlet--mobile">
@@ -345,20 +346,6 @@
 									</div>
 									<div class="kt-portlet__body">
 										<div id="presentasi"></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md">
-								<div class="kt-portlet kt-portlet--mobile">
-									<div class="kt-portlet__head">
-										<div class="kt-portlet__head-label">
-											<h3 class="kt-portlet__head-title">
-												Nilai Aset
-											</h3>
-										</div>
-									</div>
-									<div class="kt-portlet__body">
-                              <div id="statistikAset"></div>
 									</div>
 								</div>
 							</div>
@@ -406,6 +393,26 @@
 								</div>
 							</div>
 						</div>
+						<div class="row mt-5">
+							<div class="col-md">
+								<div class="kt-portlet kt-portlet--mobile">
+									<div class="kt-portlet__head">
+										<div class="kt-portlet__head-label">
+											<h3 class="kt-portlet__head-title">
+												Nilai Aset
+											</h3>
+										</div>
+									</div>
+									<div class="kt-portlet__body">
+                              <div id="statistikAset"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--End of copy=-->
+
+
 						<div class="row mt-5">
 							<div class="col-md">
 								<div class="kt-portlet kt-portlet--tab">
@@ -482,6 +489,12 @@
 	<script src="assets/js/amchart/charts.js"></script>
 	<script src="assets/js/amchart/material.js"></script>
 	<script src="assets/js/amchart/animated.js"></script>
+
+		<!-- start copy from here -->
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		<!--end of copy -->
 	<!-- end: amchartjs -->
 	<!-- gmaps -->
 	<script src="//maps.google.com/maps/api/js?key=AIzaSyBTGnKT7dt597vo9QgeQ7BFhvSRP4eiMSM" type="text/javascript"></script>
@@ -739,6 +752,7 @@
 			am4core.useTheme(am4themes_myTheme);
 			am4core.useTheme(am4themes_animated);
 
+
 			var chart = am4core.create("presentasi", am4charts.PieChart);
 
 			var pieSeries = chart.series.push(new am4charts.PieSeries());
@@ -802,46 +816,83 @@
 				}
 			}
 
-			am4core.useTheme(am4themes_myTheme2);
-
 			am4core.useTheme(am4themes_animated);
+
+			//Start copy from here
 
 			var chart = am4core.create("statistikAset", am4charts.XYChart);
 				// chart.scrollbarX = new am4core.Scrollbar();
 
 				chart.data = [{
-					"ket": "Kendaraan",
-					"jumlah": 700
+				  "kategori": "Tanah",
+				  "nilai": 30250000000
 				}, {
-					"ket": "Bangunan",
-					"jumlah": 920
+				  "kategori": "Alat-Alat Besar",
+				  "nilai": 18820000000
 				}, {
-					"ket": "Tanah",
-					"jumlah": 1000
+				  "kategori": "Alat-Alat Angkutan",
+				  "nilai": 18090000000
 				}, {
-					"ket": "canceled",
-					"jumlah": 500
+				  "kategori": "Alat Bengkel dan Alat Ukur",
+				  "nilai": 13220000000
+				}, {
+				  "kategori": "Alat Kantor dan Rumah Tangga",
+				  "nilai": 11220000000
+				}, {
+				  "kategori": "Alat Studio dan Alat Komunikasi",
+				  "nilai": 11140000000
+				}, {
+				  "kategori": "Alat Laboratorium",
+				  "nilai": 9840000000
+				}, {
+				  "kategori": "Alat Persenjataan/Keamanan",
+				  "nilai": 7110000000
+				}, {
+				  "kategori": "Bangunan Gedung",
+				  "nilai": 6650000000
+				}, {
+				  "kategori": "Monumen",
+				  "nilai": 5800000000
+				}, {
+				  "kategori": "Jalan dan Jembatan",
+				  "nilai": 4430000000
+				}, {
+				  "kategori": "Instalasi",
+				  "nilai": 4410000000
+				},{
+				  "kategori": "Jaringan",
+				  "nilai": 4410000000
+				},{
+				  "kategori": "Buku dan Perpustakaan",
+				  "nilai": 4410000000
+				},{
+				  "kategori": "Barang Bercorak Kebudayaan",
+				  "nilai": 4410000000
+				},{
+				  "kategori": "Aset Renovasi",
+				  "nilai": 4410000000
 				}];
 
 
 				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-				categoryAxis.dataFields.category = "ket";
+				categoryAxis.dataFields.category = "kategori";
 				categoryAxis.renderer.grid.template.location = 0;
 				categoryAxis.renderer.minGridDistance = 30;
-				categoryAxis.renderer.labels.template.horizontalCenter ="middle";
+				categoryAxis.renderer.labels.template.horizontalCenter = "right";
 				categoryAxis.renderer.labels.template.verticalCenter = "middle";
-				categoryAxis.renderer.labels.template.rotation = 0;
+				categoryAxis.renderer.labels.template.rotation = 270;
 				categoryAxis.tooltip.disabled = true;
 				categoryAxis.renderer.minHeight = 110;
 
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.renderer.minWidth = 50;
 
+				// Create series
 				var series = chart.series.push(new am4charts.ColumnSeries());
 				series.sequencedInterpolation = true;
-				series.dataFields.valueY = "jumlah";
-				series.dataFields.categoryX = "ket";
-				series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
+				series.dataFields.valueY = "nilai";
+				series.dataFields.categoryX = "kategori";
+				series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
 				series.columns.template.strokeWidth = 0;
 
 				series.tooltip.pointerOrientation = "vertical";
@@ -850,14 +901,17 @@
 				series.columns.template.column.cornerRadiusTopRight = 10;
 				series.columns.template.column.fillOpacity = 0.8;
 
+				// on hover, make corner radiuses bigger
 				var hoverState = series.columns.template.column.states.create("hover");
 				hoverState.properties.cornerRadiusTopLeft = 0;
 				hoverState.properties.cornerRadiusTopRight = 0;
 				hoverState.properties.fillOpacity = 1;
 
 				series.columns.template.adapter.add("fill", function(fill, target) {
-					return chart.colors.getIndex(target.dataItem.index);
+				  return chart.colors.getIndex(target.dataItem.index);
 				});
+
+				//end of copy
 
 				chart.cursor = new am4charts.XYCursor();
 			}); 
