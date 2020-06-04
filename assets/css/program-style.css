@@ -279,6 +279,15 @@ tr.shown td.details-control {
 }
 
 
+.verAlign {
+   vertical-align: middle !important;
+}
+
+.boxWarna {
+   width: 10px;
+   height: 10px;
+   background-color: tomato;
+}
 
 /*Responsive*/
 @media(max-width: 1024px) {

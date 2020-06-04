@@ -201,7 +201,7 @@
 										</div>
 									</div>
 								</div>
-									<div id="inputManual" class="kt-portlet kt-portlet--mobile">
+								<div id="inputManual" class="kt-portlet kt-portlet--mobile">
 									<div class="kt-portlet__head">
 										<div class="kt-portlet__head-label">
 											<h3 class="kt-portlet__head-title">
@@ -465,13 +465,17 @@
 			$('.dataTables_length').addClass('bs-select');
 		});
 	</script>
+
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$( '.uang' ).mask('000.000.000', {reverse: true});
+			$( '.uang' ).mask('000.000.000.000', {reverse: true});
 
 		})
 	</script>
+
+
 	<script>
 		$('#btn_tambahManual').click(function() {
 			$(this).removeClass('btn-outline-success');
@@ -495,7 +499,7 @@
 			.fixedColumns().relayout();
 		});
 	</script>
-   <script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function(){
 			$('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
 				$($.fn.dataTable.tables(true)).DataTable()

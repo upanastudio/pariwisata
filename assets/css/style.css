@@ -59,9 +59,9 @@ body{
 	background-color: rgba(11,28,44,.1);
 	border:none;
 }
-.kt-portlet,kt-portlet--heightfluid{
+/*.kt-portlet,kt-portlet--heightfluid{
 	height: calc(100% - 35px)
-}
+}*/
 .info-aset{
 	padding: 30px 15px;
 	/*background-color:  #fda109;*/
