@@ -147,7 +147,7 @@
                         <div class="kt-portlet kt-portlet--height-fluid">
                            <div class="kt-portlet__body">
                               <figure class="highcharts-figure">
-                                 <div id="container-statistik"></div>
+                                 <div style="height: 500px;margin: 0 auto" id="container-statistik"></div>
                               </figure>
                            </div>
                         </div>
@@ -1739,7 +1739,8 @@
    <script src="assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
    <script src="assets/js/scripts.bundle.js" type="text/javascript"></script>
    <script src="assets/plugins/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
    <script src="https://code.highcharts.com/modules/exporting.js"></script>
    <script src="https://code.highcharts.com/modules/export-data.js"></script>
    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -1845,16 +1846,23 @@
             text: 'Tingkat Penyerapan Anggaran'
          },
          xAxis: {
-            categories: ['Program 01', 'Program 02', 'Program 03', 'Program 04', 'Program 05']
+            categories: ['Program 01', 'Program 02', 'Program 03', 'Program 04', 'Program 05', 'Program 06', 'Program 07', 'Program 08', 'Program 09', 'Program 10'],
+            min: 0,
+            max: 4,
+            scrollbar: {
+              enabled: true
+            },
+            tickLength: 0,
          },
          yAxis: {
-            min: 0,
             title: {
                text: ''
-            }
+            },
+            
+            
          },
          legend: {
-            reversed: true
+            // reversed: false
          },
          tooltip: {
             pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
@@ -1864,25 +1872,29 @@
             series: {
                stacking: 'percent',
                groupPadding: 0.11,
-               pointPadding: 0
+               pointPadding: 0,
             }
          },
          series: [{
             name: 'Sisa Anggaran',
-            data: [10, 3, 4, 7, 2],
-            stack: 'anggaran'
+            data: [10, 3, 4, 7, 2,10, 3, 4, 7, 2],
+            stack: 'anggaran',
+            legendIndex: 1,
          }, {
             name: 'Penyerapan Anggaran',
-            data: [5, 2, 3, 2, 1],
-            stack: 'anggaran'
+            data: [5, 2, 3, 2, 1,5, 2, 3, 2, 1],
+            stack: 'anggaran',
+            legendIndex: 0,
           }, {
             name: 'Sisa Progress Fisik',
-            data: [2, 5, 6, 2, 1],
-            stack: 'progress'
+            data: [2, 5, 6, 2, 1,2, 5, 6, 2, 1],
+            stack: 'progress',
+            legendIndex: 3,
           }, {
             name: 'Progress Fisik',
-            data: [10, 2, 4, 6, 7],
-            stack: 'progress'
+            data: [10, 2, 4, 6, 7,10, 2, 4, 6, 7],
+            stack: 'progress',
+            legendIndex: 2,
           }]
       });
    </script>
